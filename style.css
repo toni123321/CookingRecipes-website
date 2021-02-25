@@ -8,9 +8,8 @@ body {
 .container {
   display:grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 0.3fr 3fr 2fr 2fr 0.3fr;
-  height: 100vh;
-  width: 100vw;
+  grid-template-rows: 5vh 1fr 2fr 2fr 0.3fr;
+  width: 100vw; 
   grid-template-areas:
       "logo name darkModeBtn"
       "nav nav nav"
@@ -24,7 +23,16 @@ body {
   text-transform: uppercase; /* makes the text uppercase */
 }
 
-nav, #logo, #name, #darkModeBtn, #content1, #content2, #content3, #content4, #content5, #content6, footer{
+
+#content1, #content2, #content3, #content4, #content5, #content6{
+  max-width: 200vw;
+  max-height: 1000px;
+}
+
+
+
+
+#logo, #name, #darkModeBtn, #content1, #content2, #content3, #content4, #content5, #content6, footer{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,10 +43,11 @@ nav {
   grid-area: nav;
   background-color: antiquewhite;
   /* background-image: url("recipes-background-nav.jfif"); */
-  background-image:url("recipes-background-nav2.jpg");
+  background-image:url("food.jpg");
   background-repeat: no-repeat;
   background-position:center;
   background-size: cover;
+
 }
 
 #logo {
@@ -94,7 +103,7 @@ footer {
   font-weight: 200;
 }
 
-
+/* 
 @media only screen and (max-width: 550px) {
   .container {
     grid-template-columns: 1fr 1fr 1fr;
@@ -110,5 +119,4 @@ footer {
       "content6 content6 content6"
       "footer footer footer";
   }
-}
-            
+} */
