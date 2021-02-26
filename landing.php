@@ -11,7 +11,14 @@
 <body>
     <header>
         <div id="name"><h3>NAME</h3></div>
-        <nav><h3>NAVBAR</h3></nav>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#recipes">Recipes</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#account">Account</a></li>
+            </ul>
+        </nav>
         <div id="mobileHeader"></div>
         <div id="search">
             <form action="/">

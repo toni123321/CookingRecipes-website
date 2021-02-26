@@ -1,23 +1,6 @@
 @media screen and (min-width: 830px) {
-  /* Flex design for logo, name, navbar */
-  /* header > #name, nav{
-      display: inline;
-  } */
-  
-  /* header {
-      display:grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: 5vh 30vh;
-      grid-template-areas:
-        "name nav nav"
-        "search search search";
-      text-align: center; 
-      font-size: 1rem; 
-      font-weight: 800; 
-      text-transform: uppercase; 
-  } 
-  */
 
+  /* Hide mobileHeader(image as independent element) when we are on desktop viewport */
   #mobileHeader{
     display: none;
   }
@@ -39,13 +22,7 @@
     background-size: cover;
   }
   
-  #search, #name, nav{
-  /*     display: flex;
-    justify-content: center;
-    align-items: center; */
-  }
-  
-  #search > form, #name > h3, nav > h3 {
+  #search > form, #name > h3, nav > ul {
     color:white;
     background-image: linear-gradient(rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0.7) 20%);
     margin-top:0;
@@ -58,6 +35,14 @@
     height:30%;
   }
   
+  nav > ul > li {
+    margin-right:5%;
+    list-style-type: none;
+  }
+  nav > ul > li > a {
+    text-decoration: none;
+    color:white;
+  }
   
   #name{
     /* background: #18ffff; */
@@ -96,7 +81,7 @@
     padding-bottom: 100%;
     display: block;
   }
-  }
+}
   
   @media screen and (max-width: 830px) and (min-width: 549px) {
   /* tablet*/
@@ -118,7 +103,7 @@
     text-transform: uppercase; /* makes the text uppercase */  
   }
   
-  #name > h3, nav > h3, #search > form {
+  #name > h3, nav > ul, #search > form {
     color:black;
     margin-top:0;
     height:100%;
@@ -126,6 +111,16 @@
     justify-content: center;
     align-items: center;
   }
+
+  nav > ul > li {
+    margin-right:5%; /* put some space between the navbar elements */
+    list-style-type: none; /* bullets disappear from the list */
+  }
+  nav > ul > li > a {
+    text-decoration: none; /* remove the href underline */
+    color:black;
+  }
+
   #search > form > input, button {
     height:50%;
   }
