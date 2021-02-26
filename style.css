@@ -1,93 +1,164 @@
-/* Flex design for logo, name, navbar */
-/* header > #name, nav{
-    display: inline;
-} */
-
-/* header {
+@media screen and (min-width: 830px) {
+  /* Flex design for logo, name, navbar */
+  /* header > #name, nav{
+      display: inline;
+  } */
+  
+  /* header {
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 5vh 30vh;
+      grid-template-areas:
+        "name nav nav"
+        "search search search";
+      text-align: center; 
+      font-size: 1rem; 
+      font-weight: 800; 
+      text-transform: uppercase; 
+  } 
+  */
+  
+  #mobileHeader{
+    display: none;
+  }
+  
+  header {
     display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 5vh 30vh;
+    grid-template-columns: 0.5fr 1fr 1fr;
+    grid-template-rows: 35vh;
     grid-template-areas:
-      "name nav nav"
-      "search search search";
+      "name search nav";
     text-align: center; 
-    font-size: 1rem; 
-    font-weight: 800; 
-    text-transform: uppercase; 
-} 
-*/
-
-header {
-  display:grid;
-  grid-template-columns: 0.5fr 1fr 1fr;
-  grid-template-rows: 35vh;
-  grid-template-areas:
-    "name search nav";
-  text-align: center; 
-  font-size: 1rem; /* 1rem = default browser pixels(16px)  */
-  font-weight: 800; /* above 700 bold font */
-  text-transform: uppercase; /* makes the text uppercase */
-  background-image:url("food.jpg");
-  background-repeat: no-repeat;
-  background-position:center;
-  background-size: cover;
-}
-
-#search, #name, nav{
-/*     display: flex;
-  justify-content: center;
-  align-items: center; */
-}
-
-#search > h3, #name > h3, nav > h3 {
-  color:white;
-  background-image: linear-gradient(rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0.7) 20%);
-  margin-top:0;
-  height:12%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
-#name{
-  /* background: #18ffff; */
-  grid-area: name;
-}
-nav{
-  /* background: #18ffff; */
-  grid-area: nav;
-}
-#search {
-  grid-area: search;
-  /* background-image:url("food.jpg");
-  background-repeat: no-repeat;
-  background-position:center;
-  background-size: cover; */
+    font-size: 1rem; /* 1rem = default browser pixels(16px)  */
+    font-weight: 800; /* above 700 bold font */
+    text-transform: uppercase; /* makes the text uppercase */
+    background-image:url("food.jpg");
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: cover;
+  }
   
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-gap: 2rem;
+  #search, #name, nav{
+  /*     display: flex;
+    justify-content: center;
+    align-items: center; */
+  }
   
-  max-width: 960px;
-  margin: 0 auto 30px;
-  margin-top:5%;
-}
-
-.grid > div {
-  background: black;
-  padding: 1rem;
-}
-
-.grid > div::before {
-  content: "";
-  padding-bottom: 100%;
-  display: block;
-}
-
-
-
-
+  #search > h3, #name > h3, nav > h3 {
+    color:white;
+    background-image: linear-gradient(rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0.7) 20%);
+    margin-top:0;
+    height:12%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  #name{
+    /* background: #18ffff; */
+    grid-area: name;
+  }
+  nav{
+    /* background: #18ffff; */
+    grid-area: nav;
+  }
+  #search {
+    grid-area: search;
+    /* background-image:url("food.jpg");
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: cover; */
+    
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 2rem;
+    
+    max-width: 960px;
+    margin: 0 auto 30px;
+    margin-top:5%;
+  }
+  
+  .grid > div {
+    background: black;
+    padding: 1rem;
+  }
+  
+  .grid > div::before {
+    content: "";
+    padding-bottom: 100%;
+    display: block;
+  }
+  }
+  
+  @media screen and (max-width: 830px) and (min-width: 549px) {
+  /* tablet*/
+  
+  header {
+    min-width: 100vw;
+    background-image:none;
+    display:grid;
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-rows: 8vh 30vh 5vh;
+    grid-template-areas:
+      "name nav"
+      "image image"
+      "search search";
+    text-align: center; 
+    font-size: 1rem; /* 1rem = default browser pixels(16px)  */
+    font-weight: 800; /* above 700 bold font */
+    text-transform: uppercase; /* makes the text uppercase */  
+  }
+  
+  #name > h3, nav > h3 {
+    color:black;
+    margin-top:0;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #mobileHeader{
+    grid-area: image;
+    background-image:url("food.jpg");
+    display: unset;
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: cover;
+  }
+  #name{
+    grid-area: name;
+  }
+  nav{
+    grid-area: nav;
+  }
+  #search {
+    grid-area: search;
+    }
+  
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      grid-gap: 2rem;
+      
+      max-width: 600px;
+      margin: 0 auto 30px;
+      margin-top:5%;
+    }
+    
+    .grid > div {
+      background: black;
+      padding: 1rem;
+    }
+    
+    .grid > div::before {
+      content: "";
+      padding-bottom: 100%;
+      display: block;
+    }
+  }
+  

@@ -10,6 +10,7 @@
     <header>
         <div id="name"><h3>NAME</h3></div>
         <nav><h3>NAVBAR</h3></nav>
+        <div id="mobileHeader"></div>
         <div id="search"><h3>SearchBar</h3></div>
     </header>
     <div class="grid">
