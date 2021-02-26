@@ -1,122 +1,93 @@
+/* Flex design for logo, name, navbar */
+/* header > #name, nav{
+    display: inline;
+} */
 
-body {
-  font-family: "Inter", sans-serif;
-  margin:0;
-  padding:0;
-}
+/* header {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 5vh 30vh;
+    grid-template-areas:
+      "name nav nav"
+      "search search search";
+    text-align: center; 
+    font-size: 1rem; 
+    font-weight: 800; 
+    text-transform: uppercase; 
+} 
+*/
 
-.container {
+header {
   display:grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 5vh 1fr 2fr 2fr 0.3fr;
-  width: 100vw; 
+  grid-template-columns: 0.5fr 1fr 1fr;
+  grid-template-rows: 35vh;
   grid-template-areas:
-      "logo name darkModeBtn"
-      "nav nav nav"
-      "content1 content2 content3"
-      "content4 content5 content6"
-      "footer footer footer";
-  grid-gap: 0.2rem 0.1rem;
+    "name search nav";
   text-align: center; 
   font-size: 1rem; /* 1rem = default browser pixels(16px)  */
   font-weight: 800; /* above 700 bold font */
   text-transform: uppercase; /* makes the text uppercase */
+  background-image:url("food.jpg");
+  background-repeat: no-repeat;
+  background-position:center;
+  background-size: cover;
 }
 
-
-#content1, #content2, #content3, #content4, #content5, #content6{
-  max-width: 200vw;
-  max-height: 1000px;
+#search, #name, nav{
+/*     display: flex;
+  justify-content: center;
+  align-items: center; */
 }
 
-
-
-
-#logo, #name, #darkModeBtn, #content1, #content2, #content3, #content4, #content5, #content6, footer{
+#search > h3, #name > h3, nav > h3 {
+  color:white;
+  background-image: linear-gradient(rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0.7) 20%);
+  margin-top:0;
+  height:12%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-nav {
-  background: #a7ffeb;
-  grid-area: nav;
-  background-color: antiquewhite;
-  /* background-image: url("recipes-background-nav.jfif"); */
-  background-image:url("food.jpg");
-  background-repeat: no-repeat;
-  background-position:center;
-  background-size: cover;
 
-}
-
-#logo {
-  background: #18ffff;
-  grid-area: logo;
-}
-
-#name {
-  background: #18ffff;
+#name{
+  /* background: #18ffff; */
   grid-area: name;
 }
-
-#darkModeBtn {
-  background: #18ffff;
-  grid-area: darkModeBtn;
+nav{
+  /* background: #18ffff; */
+  grid-area: nav;
+}
+#search {
+  grid-area: search;
+  /* background-image:url("food.jpg");
+  background-repeat: no-repeat;
+  background-position:center;
+  background-size: cover; */
+  
 }
 
-#content1 {
-  background: #6fffd2;
-  grid-area: content1;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 2rem;
+  
+  max-width: 960px;
+  margin: 0 auto 30px;
+  margin-top:5%;
 }
 
-#content2 {
-  background: #64ffda;
-  grid-area: content2;
+.grid > div {
+  background: black;
+  padding: 1rem;
 }
 
-#content3 {
-  background: #73ffba;
-  grid-area: content3;
-}
-
-#content4 {
-  background: #73ffba;
-  grid-area: content4;
-}
-
-#content5 {
-  background: #73ffba;
-  grid-area: content5;
-}
-
-#content6 {
-  background: #73ffba;
-  grid-area: content6;
+.grid > div::before {
+  content: "";
+  padding-bottom: 100%;
+  display: block;
 }
 
 
-footer {
-  background: #1de9b6;
-  grid-area: footer;
-  font-size: 0.6rem;
-  font-weight: 200;
-}
 
-/* 
-@media only screen and (max-width: 550px) {
-  .container {
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 0.4fr 1.4fr 1.2fr 1.2fr 1.2fr 1.2fr 1.2fr 1.2fr;
-    grid-template-areas:
-      "logo name darkModeBtn"
-      "nav nav nav"
-      "content1 content1 content1"
-      "content2 content2 content2"
-      "content3 content3 content3"
-      "content4 content4 content4"
-      "content5 content5 content5"
-      "content6 content6 content6"
-      "footer footer footer";
-  }
-} */
+
