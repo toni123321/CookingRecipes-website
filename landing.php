@@ -10,15 +10,15 @@
 </head>
 <body>
     <header>
-            <div id="name"><h3>NAME</h3></div>
-            <nav>
-                <ul>
-                    <li><a href="#account">SIGN UP/IN</a></li>
-                </ul>
-            </nav>
-            <a href="#" class="landingButton">Discover recipes now</a>
-            <div id="label">label</div>
-            <div id="backgroundPicture"></div>
-    <footer>footer</footer>
+        <div id="name"><h3>NAME</h3></div>
+        <nav>
+            <ul>
+                <li><a href="#account">SIGN UP/IN</a></li>
+            </ul>
+        </nav>
+        <div class="landingButton"><a href="#">>Discover recipes now</a></div>
+        <div id="label">label</div>
+        <div id="backgroundPicture"></div>
+    </header>
 </body>
 </html>

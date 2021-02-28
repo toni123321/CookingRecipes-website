@@ -3,37 +3,70 @@ body{
 }
 
 @media screen and (min-width: 830px) {
+  
+  header {
+    margin-top: -0.5rem;
+    display:grid;
 
-    /* Hide mobileHeader(image as independent element) when we are on desktop viewport */
-    #mobileHeader{
-      display: none;
-    }
+    width: 100%;
+    height: 100%;
+
+    grid-template-columns: 0.3fr 1fr;
+    grid-template-rows: 10vh 30vh 30vh;
+
+    grid-template-areas:
+      'name nav'
+      'label label'
+      'button button';
+    text-align: center;
+    font-size: 1rem; /* 1rem = default browser pixels(16px)  */
+    font-weight: 800; /* above 700 bold font */
+    text-transform: uppercase; /* makes the text uppercase */
+    background-image:url("landing-background.jpg");
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: 100vw 100vh;
     
-    header {
-      margin-top: -0.5rem;
-      display:grid;
-      width: 100%;
-      height: 100%;
-      grid-template-columns: 0.3fr 1fr;
-      grid-template-rows: 10vh 30vh 30vh;
-      grid-template-areas:
-        'name nav'
-        'label label'
-        'button button';
-      text-align: center; 
-      font-size: 1rem; /* 1rem = default browser pixels(16px)  */
-      font-weight: 800; /* above 700 bold font */
-      text-transform: uppercase; /* makes the text uppercase */
-      background-image:url("landing-background.jpg");
-      background-repeat: no-repeat;
-      background-position:center;
-      background-size: 100vw 100vh;
-    }
+    
+  }
+  
+  /* Put in the center of the grid box (name, label, landing button) */
+  #name, #label, .landingButton {
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
-    .landingButton {
+  }
+  
+  /* Specify grid areas */
+
+  #name{
+    grid-area: name;
+    color: white;
+  }
+
+  nav{
+    grid-area: nav;
+
+    /* Put navbar vertically to the center and horizontally to thr right */
+    display:flex; 
+    justify-content:flex-end; /* horizontal pos */
+    align-items: center; /* verticall pos */
+    margin-right:5%; /* just put away a little from the right */
+  }
+
+  #label{
+    grid-area: label;
+    color: white;
+  }
+
+  .landingButton {
+    grid-area: button;
+  }
+
+  .landingButton > a {
       width: 30%;
       height: 5%;
-      grid-area: button;
       background-color:#000000;
       border-radius:50px;
       border:1px solid #000000;
@@ -41,220 +74,43 @@ body{
       cursor:pointer;
       color:#ffffff;
       font-family:Arial;
-      font-size:19px;
+      font-size:1.2rem;
       padding:14px 31px;
-      text-decoration:none;
-      grid-column: 1 / 3;
-      grid-row: 2;
-    }
-    .landingButton:hover {
-      background-color:#ffffff;
-      color: #000000;
-    }
-    .landingButton:active {
-      position:relative;
-      top:1px;
-    }
-    
-
-    footer {
-      position: fixed;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      background-color: darkslategray;
-      color: white;
-      text-align: center;
-   }
-    
-    #search > form, #name > h3, nav > ul {
-      color:white;
-      background-image: linear-gradient(rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0.7) 20%);
-      margin-top:0;
-      height:18%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    #search > form > input, button {
-      height:30%;
-    }
-    
-    nav > ul > li {
-      margin-right:5%;
-      list-style-type: none;
-    }
-    nav > ul > li > a {
-      text-decoration: none;
-      color:white;
-    }
-    
-    #label{
-      grid-area: label;
-    }
-    #name{
-      /* background: #18ffff; */
-      grid-area: name;
-    }
-    nav{
-      /* background: #18ffff; */
-      grid-area: nav;
-    }
-    footer{
-      grid-area: footer;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      grid-gap: 2rem;
-      
-      max-width: 960px;
-      margin: 0 auto 30px;
-      margin-top:5%;
-    }
-    
-    .grid > div {
-      background: black;
-      padding: 1rem;
-    }
-    
-    .grid > div::before {
-      content: "";
-      padding-bottom: 100%;
-      display: block;
-    }
+      text-decoration:none; 
   }
     
-    @media screen and (max-width: 830px) and (min-width: 549px) {
-    /* tablet*/
-    
-    header {
-      margin-left: -3%;
-      margin-right: -3%;
-      background-image:none;
-      display:grid;
-      grid-template-columns: 0.5fr 1fr;
-      grid-template-rows: 8vh 30vh 5vh;
-      grid-template-areas:
-        "name nav"
-        "image image"
-        "search search";
-      text-align: center; 
-      font-size: 1rem; /* 1rem = default browser pixels(16px)  */
-      font-weight: 800; /* above 700 bold font */
-      text-transform: uppercase; /* makes the text uppercase */  
-    }
-    
-    #name > h3, nav > ul, #search > form {
-      color:black;
-      margin-top:0;
-      height:100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  
-    nav > ul > li {
-      margin-right:5%; /* put some space between the navbar elements */
-      list-style-type: none; /* bullets disappear from the list */
-    }
-    nav > ul > li > a {
-      text-decoration: none; /* remove the href underline */
-      color:black;
-    }
-  
-    #search > form > input, button {
-      height:50%;
-    }
-    
-    #mobileHeader{
-      grid-area: image;
-      background-image:url("food.jpg");
-      display: unset;
-      background-repeat: no-repeat;
-      background-position:center;
-      background-size: cover;
-    }
-    #name{
-      grid-area: name;
-    }
-    nav{
-      grid-area: nav;
-    }
-    #search {
-      grid-area: search;
-    }
-    
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      grid-gap: 2rem;
-      
-      max-width: 600px;
-      margin: 0 auto 30px;
-      margin-top:5%;
-    }
-    
-    .grid > div {
-      background: black;
-      padding: 1rem;
-    }
-    
-    .grid > div::before {
-      content: "";
-      padding-bottom: 100%;
-      display: block;
-    }
+  .landingButton > a:hover {
+    background-color:#ffffff;
+    color: #000000;
+  }
+
+  .landingButton > a:active {
+    position:relative;
+    top:1px;
+  }
+
+ 
+
+  nav > ul {
+    color:white;
+    background-image: linear-gradient(rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0.7) 20%);
+    margin-top:0;
+    height:38%;
+    width:20%;
+    display:flex;
+    justify-content: center;
+    align-items:center;
   }
   
-  @media screen and (max-width: 549px ) {
-    /* smartphone/smaller tablets*/
-    
-    header {
-      margin-left: -3%;
-      margin-right: -3%;
-      background-image:none;
-      display:grid;
-      grid-template-columns: 1fr 0.7fr;
-      grid-template-rows: 8vh 30vh 5vh;
-      grid-template-areas:
-        "name nav"
-        "image image"
-        "search search";
-      text-align: center; 
-      font-size: 1rem; /* 1rem = default browser pixels(16px)  */
-      font-weight: 800; /* above 700 bold font */
-      text-transform: uppercase; /* makes the text uppercase */  
-    }
-    
-    #name > h3, nav > h3, #search > form  {
-      color:black;
-      margin-top:0;
-      height:100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    #search > form > input, button {
-      height:40%;
-    }
-    
-    #mobileHeader{
-      grid-area: image;
-      background-image:url("food.jpg");
-      display: unset;
-      background-repeat: no-repeat;
-      background-position:center;
-      background-size: cover;
-    }
-    #name{
-      grid-area: name;
-    }
-    nav{
-      grid-area: nav;
-    }
-
-    }
-      
   
+  nav > ul > li {
+    list-style-type: none;
+    font-size: 1.5rem;
+  }
+  nav > ul > li > a {
+    text-decoration: none;
+    color:white;
+  }
+
+
+}
