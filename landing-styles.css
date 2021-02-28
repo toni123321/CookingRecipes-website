@@ -30,12 +30,12 @@ body{
     
   }
   
+
   /* Put in the center of the grid box (name, label, landing button) */
-  #name, #label, .landingButton {
+  #label, .landingButton {
     display:flex;
     justify-content:center;
     align-items:center;
-
   }
   
   /* Specify grid areas */
@@ -47,12 +47,6 @@ body{
 
   nav{
     grid-area: nav;
-
-    /* Put navbar vertically to the center and horizontally to thr right */
-    display:flex; 
-    justify-content:flex-end; /* horizontal pos */
-    align-items: center; /* verticall pos */
-    margin-right:5%; /* just put away a little from the right */
   }
 
   #label{
@@ -90,16 +84,15 @@ body{
   }
 
  
-
-  nav > ul {
+  nav > ul, #name > h3{
     color:white;
     background-image: linear-gradient(rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0.7) 20%);
     margin-top:0;
-    height:38%;
-    width:20%;
-    display:flex;
+    height:100%;
+
+    display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
   }
   
   
