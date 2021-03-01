@@ -4,6 +4,10 @@
   #mobileHeader{
     display: none;
   }
+
+  nav > .dropdown {
+    display: none;
+  }
   
   header {
     margin-top: -0.5rem;
@@ -85,6 +89,9 @@
   
   @media screen and (max-width: 830px) and (min-width: 549px) {
   /* tablet*/
+  nav > .dropdown {
+    display: none;
+  }
   
   header {
     margin-left: -3%;
@@ -167,7 +174,13 @@
 
 @media screen and (max-width: 549px ) {
   /* smartphone/smaller tablets*/
-  
+  nav > ul {
+    display: none;
+  }
+  nav > .dropdown {
+    display: unset;
+  }
+
   header {
     margin-left: -3%;
     margin-right: -3%;
@@ -185,7 +198,56 @@
     text-transform: uppercase; /* makes the text uppercase */  
   }
   
-  #name > h3, nav > h3, #search > form  {
+  /* Dropdown settings */
+  .dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content a:hover {background-color: #f1f1f1;}
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+  }
+
+
+  nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right:10%;
+  }
+
+
+  #name > h3, #search > form{
     color:black;
     margin-top:0;
     height:100%;
@@ -205,6 +267,7 @@
     background-position:center;
     background-size: cover;
   }
+
   #name{
     grid-area: name;
   }
@@ -213,27 +276,27 @@
   }
   #search {
     grid-area: search;
-    }
-  
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      grid-gap: 2rem;
-      
-      max-width: 300px;
-      margin: 0 auto 30px;
-      margin-top:5%;
-    }
-    
-    .grid > div {
-      background: black;
-      padding: 1rem;
-    }
-    
-    .grid > div::before {
-      content: "";
-      padding-bottom: 100%;
-      display: block;
-    }
   }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: 2rem;
+    
+    max-width: 300px;
+    margin: 0 auto 30px;
+    margin-top:5%;
+  }
+  
+  .grid > div {
+    background: black;
+    padding: 1rem;
+  }
+  
+  .grid > div::before {
+    content: "";
+    padding-bottom: 100%;
+    display: block;
+  }
+}
     

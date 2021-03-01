@@ -12,6 +12,14 @@
     <header>
         <div id="name"><h3>NAME</h3></div>
         <nav>
+            <div class="dropdown">
+                <button class="dropbtn">Right</button>
+                <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+            </div>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#recipes">Recipes</a></li>

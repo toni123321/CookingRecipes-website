@@ -309,7 +309,7 @@ body{
   }
 
   .dynamicText {
-    margin: 30vh;
+    margin-top: 30vh;
     padding-top: auto;
     font-family:Arial;
     color: rgba(255, 164, 41, 1);
