@@ -13,11 +13,12 @@
         <div id="name"><h3>NAME</h3></div>
         <nav>
             <div class="dropdown">
-                <button class="dropbtn">Right</button>
+                <button class="dropbtn">Menu</button>
                 <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a href="#">Home</a>
+                    <a href="#">Recipes</a>
+                    <a href="#">About</a>
+                    <a href="#">Account</a>
                 </div>
             </div>
             <ul>
