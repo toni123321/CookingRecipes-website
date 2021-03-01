@@ -16,8 +16,17 @@
                 <li><a href="#account">SIGN UP/IN</a></li>
             </ul>
         </nav>
-        <div class="landingButton"><a href="#">>Discover recipes now</a></div>
-        <div id="label">label</div>
+        <div class="dynamicText">
+            <span>How about some Italian cuisine?</span>
+            <span>How about some Chinese cuisine?</span>
+            <span>How about some Japanese cuisine?</span>
+            <span>How about some Mexican cuisine?</span>
+            <span>How about some American cuisine?</span>
+            <span>How about some Thai cuisine?</span>
+            <span>How about some Indian cuisine?</span>
+        </div>
+        <div class="landingButton"><a href="#">Discover recipes now</a></div>
+        <!-- <div id="label">label</div> -->
         <div id="backgroundPicture"></div>
     </header>
 </body>
