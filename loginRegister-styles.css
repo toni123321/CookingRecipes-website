@@ -1,13 +1,10 @@
-fieldset {
-    width:30vw;
-    /* put the form in the center of the page */
-    position:fixed;
-    top:50%;
-    left:50%;
-    transform: translate(-50%, -50%);
+
+.form-parent {
+    margin:0 auto;
+    width:500px;    
 }
 
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=date] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -33,7 +30,7 @@ button {
     text-align: center;
     margin: 24px 0 12px 0;
 }
-.avatarLogin {
+.avatar {
     text-align:center;
     margin: 12px 0 12px 0;
 }
@@ -45,8 +42,16 @@ span.password {
     padding-top: 16px;
 }
 
+@media screen and (max-width: 700px) {
+    .form-parent {
+        width:400px;
+    }
+}
 
 @media screen and (max-width: 400px) {
+    .form-parent {
+        width:250px;
+    }
     span.password {
         display:block;
         float:none;
