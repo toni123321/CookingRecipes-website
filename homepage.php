@@ -37,12 +37,12 @@
         </div>
     </header>
     <div class="grid">
-        <div><img src="" alt=""></div>
-        <div><img src="" alt=""></div>
-        <div><img src="" alt=""></div>
-        <div><img src="" alt=""></div>
-        <div><img src="" alt=""></div>
-        <div><img src="" alt=""></div>
+        <div><img src="avatarLogin.png" alt=""></div>
+        <div><img src="avatarRegister.png" alt=""></div>
+        <div><img src="avatarLogin.png" alt=""></div>
+        <div><img src="avatarLogin.png" alt=""></div>
+        <div><img src="avatarRegister.png" alt=""></div>
+        <div><img src="avatarLogin.png" alt=""></div>
     </div>
 </body>
 </html>
