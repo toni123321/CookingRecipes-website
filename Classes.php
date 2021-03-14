@@ -1,20 +1,88 @@
 <?php
     
     /* ---classes--- */
-    public class Control{
-        $users = array();
-        $recipes = array();
+   
+    class User{
+        
+        //variables
+        private $fname;
+        private $lname;
+        private $dob;
+        private $email;
+        private $password;
+
+        //constructor
+        public function __construct($fname, $lname, $dob, $email, $password){
+            $this->fname = $fname;
+            $this->lname = $lname;
+            $this->dob = $dob;
+            $this->email = $email;
+            $this->password = $password;
+        }
+
+        //setters
+        public function setFName($fname){
+            $this->fname = $fname;
+        }
+
+        public function setLName($lname){
+            $this->lname = $lname;
+        }
+
+        public function setdob($dob){
+            $this->dob = $dob;
+        }
+
+        public function setEmail($email){
+            $this->email = $email;
+        }
+
+        public function setPassword($password){
+            if (strlen($password) >= 8) {
+                $this->password = $password;
+            } else {
+                //error msg
+            }  
+        }
+
+        //getters
+        public function getFName(){
+            return "$this->fname";
+        }
+
+        public function getLName(){
+            return "$this->lname";
+        }
+
+        public function getdob(){
+            return "$this->dob";
+        }
+
+        public function getEmail(){
+            return "$this->email";
+        }
+
+        public function getPassword(){
+            return "$this->password";
+        }
+        
+    }
+
+    class Control{
+        private $users = array();
+        private $recipes = array();
 
             //users
 
-        public function addUser($fname, $lname, $yearOfBirth, $email, $password){
-            $user = new User();
+        public function addUser($fname, $lname, $dob, $email, $password){
             
-            $user->fname = $fname;
-            $user->lname = $lname;
-            $user->yearOfBirth = $yearOfBirth;
-            $user->email = $email;
-            $user->email = $password;
+            $user = new User($fname, $lname, $dob, $email, $password);
+            
+            // $user->fname = $fname;
+            // $user->lname = $lname;
+            // $user->dob = $dob;
+            // $user->email = $email;
+            // $user->email = $password;
 
             $users[] = $user;
         }
@@ -76,76 +144,11 @@
 
     }
 
-    public class User{
+
+    class Recipe{
         
         //variables
-        private $fname;
-        private $lname;
-        private $yearOfBirth
-        private $email;
-        private $password;
-
-        //constructor
-        public function __construct($fname, $lname, $yearOfBirth, $email, $password){
-            this->fname = $fname;
-            this->lname = $lname;
-            this->yearOfBirth = $yearOfBirth;
-            this->email = $email;
-            this->password = $password;
-        }
-
-        //setters
-        public function setFName($fname){
-            this->fname = $fname;
-        }
-
-        public function setLName($lname){
-            this->lname = $lname;
-        }
-
-        public function setYearOfBirth($yearOfBirth){
-            this->yearOfBirth = $yearOfBirth;
-        }
-
-        public function setEmail($email){
-            this->email = $email;
-        }
-
-        public function setPassword($password){
-            if (strlen($password) => 8) {
-                this->password = $password;
-            } else {
-                //error msg
-            }  
-        }
-
-        //getters
-        public function getFName(){
-            return "$this->fname";
-        }
-
-        public function getLName(){
-            return "$this->lname";
-        }
-
-        public function getYearOfBirth(){
-            return "$this->yearOfBirth";
-        }
-
-        public function getEmail(){
-            return "$this->email";
-        }
-
-        public function getPassword(){
-            return "$this->password";
-        }
-        
-    }
-
-    public class Recipe{
-        
-        //variables
-        $ingredients = array();
+        private $ingredients = array();
 
         public static $idCounter = 1000;
         private $id;
@@ -154,45 +157,45 @@
         private Cuisine $cuisine;
         private $duration;
         private DifficultyLevel $difficulty;
-        private $instructions
+        private $instructions;
 
         //constructor
         public function __construct($title, $calories, Cuisine $cuisine, $duration, DifficultyLevel $difficulty, $instructions){
-            this->title = $title;
-            this->calories = $calories;
-            this->cuisine = $cuisine;
-            this->duration = $duration;
-            this->difficulty = $difficulty;
-            this->id = $instructions;
+            $this->title = $title;
+            $this->calories = $calories;
+            $this->cuisine = $cuisine;
+            $this->duration = $duration;
+            $this->difficulty = $difficulty;
+            $this->id = $instructions;
 
-            this->id = $idCounter;
+            $this->id = $idCounter;
 
             $idCounter++;
         }
 
         //setters
         public function setTitle($title){
-            this->title = $title;
+            $this->title = $title;
         }
 
         public function setCalories($calories){
-            this->calories = $calories;
+            $this->calories = $calories;
         }
 
         public function setCuisine(Cuisine $cuisine){
-            this->cuisine = $cuisine;
+            $this->cuisine = $cuisine;
         }
 
         public function setDuration($duration){
-            this->duration = $duration;
+            $this->duration = $duration;
         }
 
         public function setDifficulty(DifficultyLevel $difficulty){
-            this->difficulty = $difficulty;
+            $this->difficulty = $difficulty;
         }
 
         public function setInstructions($instructions){
-            this->instructions = $instructions;
+            $this->instructions = $instructions;
         }
 
         //getters
@@ -248,7 +251,7 @@
         }
     }
 
-    public class Ingredient{
+    class Ingredient{
         
         //variables
        public static $idCounter = 1000;
@@ -258,20 +261,20 @@
 
         //constructor
         public function __construct($name, $quantity){
-            this->name = $name;
-            this->quantity = $quantity;
-            this->id = $idCounter;
+            $this->name = $name;
+            $this->quantity = $quantity;
+            $this->id = $idCounter;
 
             $idCounter++;
         }
 
         //setters
         public function setName($name){
-            this->name = $name;
+            $this->name = $name;
         }
         
         public function setQuantity($quantity){
-            this->quantity = $quantity;
+            $this->quantity = $quantity;
         }
         
         //getters
@@ -289,25 +292,25 @@
     }
 
     /* ---enums--- */
-    public enum DifficultyLevel
+    class DifficultyLevel
     {
-        case EASY;
-        case MEDIUM;
-        case HARD;
-        case EXPERT;
+        const EASY = 0;
+        const MEDIUM = 1;
+        const HARD = 2;
+        const EXPERT = 3;
     }
 
-    public enum CuisineType
+    class CuisineType
     {
-        case ITALIAN;
-        case CHINESE;
-        case JAPANESE;
-        case MEXICAN;
-        case THAI;
-        case AMERICAN;
-        case INDIAN;
-        case BALKAN;
-        case ARAB;
+        const ITALIAN = 0;
+        const CHINESE = 1;
+        const JAPANESE = 2;
+        const MEXICAN = 3;
+        const THAI = 4;
+        const AMERICAN = 5;
+        const INDIAN = 6;
+        const BALKAN = 7;
+        const ARAB = 8;
     }
 
 ?>
