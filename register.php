@@ -7,8 +7,11 @@
     <link rel="stylesheet" href="loginRegister-styles.css">
 </head>
 <body>
+   
     <div class="form-parent">
-        <form>
+
+        <form action="successRegistration.php" method="post">
+        <?php include 'registration-handling.php';?>
             <fieldset>
                 <legend>Register</legend>
                 <div class="avatar">
@@ -17,6 +20,7 @@
                 <div class="form">
                     <label for="fname"><b>First name</b></label>
                     <input type="text" placeholder="Enter first name" name="firstname" required>
+                    
                     <label for="lname"><b>Last name</b></label>
                     <input type="text" placeholder="Enter last name" name="lastname" required>
 
