@@ -10,8 +10,8 @@
    
     <div class="form-parent">
 
-        <form action="successRegistration.php" method="post">
-        <?php include 'registration-handling.php';?>
+        <form action="registration-handling.php" method="post">
+        
             <fieldset>
                 <legend>Register</legend>
                 <div class="avatar">

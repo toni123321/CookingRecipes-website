@@ -8,7 +8,8 @@
 </head>
 <body>
     <div class="form-parent">
-        <form action= "succesLogin.php" method="post">
+        
+        <form action= "login-handling.php" method="post">
             <fieldset>
                 <legend>Log in</legend>
                 <div class="avatar">
@@ -30,6 +31,7 @@
                 </div>
             </fieldset>
         </form>
+        
     </div>
 </body>
 </html>

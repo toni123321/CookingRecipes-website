@@ -1,60 +1,31 @@
-
-<?php
-    function test_input($data) {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
-
-    function printInput()
-    {
-        return "Hello";
-    }
-    
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $fname = test_input($_POST["firstname"]);
-        $lname = test_input($_POST["lastname"]);
-        $dateOfBirth = test_input($_POST["dateOfBirth"]);
-        $email = test_input($_POST["email"]);
-        $password = test_input($_POST["password"]);
-    }
-
-    // define variables and set to empty values
-    $fnameErr = $lnameErr = $dateOfBirthErr = $emailErr = $passwordErr =  "";
-    $fname = $lname = $email = $dateOfBirth = $password = "";
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success registration</title>
+</head>
+<body>
+    <?php
+        function test_input($data) {
+            $data = trim($data);
+            $data = stripslashes($data);
+            $data = htmlspecialchars($data);
+            return $data;
+        }
         
-        if (empty($_POST["firstname"])) {
-            $fnameErr = "First name is required";
-        } else {
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $fname = test_input($_POST["firstname"]);
-        }
-
-        if (empty($_POST["lastname"])) {
-            $lnameErr = "Last name is required";
-        } else {
             $lname = test_input($_POST["lastname"]);
-        }
-
-        if (empty($_POST["dateOfBirth"])) {
-            $dateOfBirthErr = "Date of birth is required";
-        } else {
             $dateOfBirth = test_input($_POST["dateOfBirth"]);
-        }
-
-        if (empty($_POST["email"])) {
-            $emailErr = "Email is required";
-        } else {
             $email = test_input($_POST["email"]);
-        }
-
-        if (empty($_POST["password"])) {
-            $passwordErr = "Password is required";
-        } else {
             $password = test_input($_POST["password"]);
+        
+            echo "Welcome, " . $fname . "<br>";
+            echo "You have registered successfully!" . "<br>";
+            echo '<a href="http://localhost/s2-wad/register.php">Go to register page</a>';
         }
-    }
-?>
+        
+    ?>
+</body>
+</html>

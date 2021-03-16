@@ -72,7 +72,11 @@
         private $users = array();
         private $recipes = array();
 
-            //users
+        public function __construct(){
+            
+        }
+
+        //users
 
         public function addUser($fname, $lname, $dob, $email, $password){
             
@@ -83,8 +87,8 @@
             // $user->dob = $dob;
             // $user->email = $email;
             // $user->email = $password;
-
-            $users[] = $user;
+            
+            $this->users[] = $user;
         }
 
         public function removeUser($email, $password){
@@ -96,7 +100,7 @@
         }
 
         public function getAllUsers(){
-            array_values($users);
+            return $this->users;
         }
 
         public function getUser($email){
