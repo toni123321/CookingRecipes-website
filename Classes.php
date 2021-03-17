@@ -47,23 +47,23 @@
 
         //getters
         public function getFName(){
-            return "$this->fname";
+            return $this->fname;
         }
 
         public function getLName(){
-            return "$this->lname";
+            return $this->lname;
         }
 
         public function getdob(){
-            return "$this->dob";
+            return $this->dob;
         }
 
         public function getEmail(){
-            return "$this->email";
+            return $this->email;
         }
 
         public function getPassword(){
-            return "$this->password";
+            return $this->password;
         }
         
     }
@@ -113,17 +113,17 @@
 
             //recipes
 
-        public function addRecipe($title, $calories, Cuisine $cuisine, $duration, DifficultyLevel $difficulty, $instructions){
-            $recipe = new Recipe();
+        public function addRecipe($title, $calories, $cuisine, $duration, $difficulty, $instructions){
+            $recipe = new Recipe($title, $calories, $cuisine, $duration, $difficulty, $instructions);
             
-            $recipe->title = $title;
-            $recipe->calories = $calories;
-            $recipe->cuisine = $cuisine;
-            $recipe->duration = $duration;
-            $recipe->difficulty = $difficulty;
-            $recipe->id = $instructions;
+            // $recipe->title = $title;
+            // $recipe->calories = $calories;
+            // $recipe->cuisine = $cuisine;
+            // $recipe->duration = $duration;
+            // $recipe->difficulty = $difficulty;
+            // $recipe->id = $instructions;
 
-            $recipes[] = $recipe;
+            $this->recipes[] = $recipe;
         }
 
         public function removeRecipe($id){
@@ -135,13 +135,13 @@
         }
 
         public function getAllRecipes(){
-            array_values($recipes);
+            return $this->recipes;
         }
 
         public function getRecipe($id){
             foreach($recipes as $recipe) {
                 if($recipe->id == $id){
-                    return "$recipe";
+                    return $recipe;
                 }
             }
         }
@@ -158,23 +158,23 @@
         private $id;
         private $title;
         private $calories;
-        private Cuisine $cuisine;
+        private $cuisine;
         private $duration;
-        private DifficultyLevel $difficulty;
+        private $difficulty;
         private $instructions;
 
         //constructor
-        public function __construct($title, $calories, Cuisine $cuisine, $duration, DifficultyLevel $difficulty, $instructions){
+        public function __construct($title, $calories, $cuisine, $duration, $difficulty, $instructions){
             $this->title = $title;
             $this->calories = $calories;
             $this->cuisine = $cuisine;
             $this->duration = $duration;
             $this->difficulty = $difficulty;
-            $this->id = $instructions;
+            $this->instructions = $instructions;
 
-            $this->id = $idCounter;
+            $this->id = self::$idCounter;
 
-            $idCounter++;
+            self::$idCounter++;
         }
 
         //setters
@@ -186,7 +186,7 @@
             $this->calories = $calories;
         }
 
-        public function setCuisine(Cuisine $cuisine){
+        public function setCuisine($cuisine){
             $this->cuisine = $cuisine;
         }
 
@@ -194,7 +194,7 @@
             $this->duration = $duration;
         }
 
-        public function setDifficulty(DifficultyLevel $difficulty){
+        public function setDifficulty($difficulty){
             $this->difficulty = $difficulty;
         }
 
@@ -204,30 +204,30 @@
 
         //getters
         public function getID(){
-            return "$this->id";
+            return $this->id;
         }
 
         public function getTitle(){
-            return "$title->title";
+            return $this->title;
         }
 
         public function getCalories(){
-            return "$calories->calories";
+            return $this->calories;
         }
 
         public function getCuisine(){
-            return strval("$cuisine->cuisine");
+            return $this->cuisine;
         }
 
         public function getDuration(){
-            return "$duration->duration";
+            return $this->duration;
         }
 
         public function getDifficulty(){
-            return strval("$difficulty->difficulty");
+            return $this->difficulty;
         }
         public function getInstructions(){
-            return "$instructions->instructions";
+            return $this->instructions;
         }
 
         //array methods
@@ -283,15 +283,15 @@
         
         //getters
         public function getName(){
-            return "$this->name";
+            return $this->name;
         }
 
         public function getQuantity(){
-            return "$this->quantity";
+            return $this->quantity;
         }
 
         public function getID(){
-            return "$this->id";
+            return $this->id;
         }
     }
 

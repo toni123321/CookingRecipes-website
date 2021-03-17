@@ -8,8 +8,8 @@
 </head>
 <body>
     <div class="form-parent">
-        
-        <form action= "login-handling.php" method="post">
+        <?php include 'login-handling.php'; ?>   
+        <form method="post">
             <fieldset>
                 <legend>Log in</legend>
                 <div class="avatar">

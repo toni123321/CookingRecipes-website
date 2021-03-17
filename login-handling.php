@@ -41,14 +41,15 @@
             }  
             if(CheckCredentials($email, $password) != null)
             {
-                echo "You successfully log in!" . "<br>";
-                $user = CheckCredentials($email, $password);
-                echo "first name: " . $user->getFName() . "<br>" . " email: " . $user->getEmail() . "<br>";
-                echo '<a href="http://localhost/s2-wad/login.php">Go to login page</a>';
+                // echo "You successfully log in!" . "<br>";
+                // $user = CheckCredentials($email, $password);
+                // echo "first name: " . $user->getFName() . "<br>" . " email: " . $user->getEmail() . "<br>";
+                // echo '<a href="http://localhost/s2-wad/login.php">Go to login page</a>';
+                header("Location:homepage.php");
+                exit;
             }
             else{
-                header("Location:login.php");
-                exit;
+                echo "Invalid credentials supplied!";
             }
         }
     ?>
