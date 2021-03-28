@@ -4,16 +4,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LoginForm</title>
-    <link rel="stylesheet" href="loginRegister-styles.css">
+    <link rel="stylesheet" href="../CSS/loginRegister-styles.css">
 </head>
 <body>
     <div class="form-parent">
-        <?php include 'login-handling.php'; ?>   
+        <?php include '../Handling/login-handling.php'; ?>
         <form method="post">
             <fieldset>
                 <legend>Log in</legend>
                 <div class="avatar">
-                    <img src="avatarLogin.png" alt="Avatar" class="avatar" width="200" height="200">
+                    <img src="../Images/avatarLogin.png" alt="Avatar" class="avatar" width="200" height="200">
                 </div>
                 <div class="form">
                     <label for="email"><b>Email</b></label>

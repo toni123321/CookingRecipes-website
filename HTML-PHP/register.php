@@ -4,18 +4,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LoginForm</title>
-    <link rel="stylesheet" href="loginRegister-styles.css">
+    <link rel="stylesheet" href="../CSS/loginRegister-styles.css">
 </head>
 <body>
    
     <div class="form-parent">
 
-        <form action="registration-handling.php" method="post">
+        <form action="../Handling/registration-handling.php" method="post">
         
             <fieldset>
                 <legend>Register</legend>
                 <div class="avatar">
-                    <img src="avatarRegister.png" alt="Avatar" class="avatar" width="200" height="200">
+                    <img src="../Images/avatarRegister.png" alt="Avatar" class="avatar" width="200" height="200">
                 </div>
                 <div class="form">
                     <label for="fname"><b>First name</b></label>

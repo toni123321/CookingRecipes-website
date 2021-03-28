@@ -6,6 +6,7 @@
     <title>Success registration</title>
 </head>
 <body>
+    <?php include '../Classes/DbControl.php'; ?>
     <?php
         function test_input($data) {
             $data = trim($data);
@@ -20,10 +21,13 @@
             $dateOfBirth = test_input($_POST["dateOfBirth"]);
             $email = test_input($_POST["email"]);
             $password = test_input($_POST["password"]);
-        
+
+            $dbControl = new DbControl();
+            $dbControl->InsertUser($fname, $lname, $dateOfBirth, $email, $password);
+
             echo "Welcome, " . $fname . "<br>";
             echo "You have registered successfully!" . "<br>";
-            echo '<a href="http://localhost/s2-wad/register.php">Go to register page</a>';
+            echo '<a href="http://localhost/s2-wad/HTML-PHP/login.php">Go to login page</a>';
         }
         
     ?>

@@ -22,7 +22,7 @@ body{
     font-size: 1rem; /* 1rem = default browser pixels(16px)  */
     font-weight: 800; /* above 700 bold font */
     text-transform: uppercase; /* makes the text uppercase */
-    background-image:url("landing-background.jpg");
+    background-image:url("../Images/landing-background.jpg");
     background-repeat: no-repeat;
     background-position:center;
     background-size: cover;
@@ -226,7 +226,7 @@ body{
     font-size: 0.8rem; /* 1rem = default browser pixels(16px)  */
     font-weight: 800; /* above 700 bold font */
     text-transform: uppercase; /* makes the text uppercase */
-    background-image:url("landing-background.jpg");
+    background-image:url("../Images/landing-background.jpg");
     background-repeat: no-repeat;
     background-position:center;
     background-size: cover;

@@ -7,38 +7,47 @@
 </head>
 <body>
     <!-- Include php classes -->
-    <?php include 'Classes.php'; ?>   
+    <?php include '../Classes/DbControl.php'; ?>
+
 
     <?php
         // Make a new object of type Control
         $control = new Control();
-        $control->addUser("Nick", "Doe", new DateTime('01/11/2000'), "nick.doe00@gmail.com", "pass123");
-        $control->addUser("John", "Newman", new DateTime('05/12/2005'), "johnxD@gmail.com", "pass321");
-        
-        
+        //$control->AddUser("Nick", "Doe", new DateTime('01/11/2000'), "nick.doe00@gmail.com", "pass123");
+        //$control->AddUser("John", "Newman", new DateTime('05/12/2005'), "johnxD@gmail.com", "pass321");
+        $dbControl = new DbControl();
+        $dbControl->GetUsers($control);
+
+
         function test_input($data) {
             $data = trim($data);
             $data = stripslashes($data);
             $data = htmlspecialchars($data);
             return $data;
         }
-
+//
+//    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//        foreach ($control->GetAllUsers() as $user)
+//        {
+//            echo $user->GetFName();
+//        }
+//    }
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $email = test_input($_POST["email"]);
             $password = test_input($_POST["password"]);
-    
+
             function CheckCredentials($email, $password){
                 global $control;
-                foreach ($control->getAllUsers() as $user) 
+                foreach ($control->GetAllUsers() as $user)
                 {
-                    if($email == $user->getEmail() && $password == $user->getPassword()){
-                        return $user;   
+                    if($email == $user->GetEmail() && $password == $user->GetPassword()){
+                        return $user;
                     }
                 }
 
                 return null;
-            }  
+            }
             if(CheckCredentials($email, $password) != null)
             {
                 // echo "You successfully log in!" . "<br>";

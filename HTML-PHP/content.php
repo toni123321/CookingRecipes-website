@@ -18,12 +18,12 @@
     </style>
 </head>
 <body>
-    <?php include 'Classes.php'; ?> 
+    <?php include '../Classes/Control.php'; ?>
     
     <?php 
         $control = new Control();
-        $control->addRecipe("Pancakes with chocolate", 250, CuisineType::AMERICAN, 0.30, DifficultyLevel::MEDIUM, "Some text 1!");
-        $control->addRecipe("Risotto", 100, CuisineType::ITALIAN, 1.00, DifficultyLevel::MEDIUM, "Some text 2!");
+        $control->AddRecipe("Pancakes with chocolate", 250, CuisineType::AMERICAN, 0.30, DifficultyLevel::MEDIUM, "Some text 1!");
+        $control->AddRecipe("Risotto", 100, CuisineType::ITALIAN, 1.00, DifficultyLevel::MEDIUM, "Some text 2!");
         
         echo '<h2>Recipes</h2>';
         echo '<ol class="recipes">';
@@ -33,7 +33,7 @@
             //echo "<div>'. $recipe->getTitle() . $recipe->getDuration() .'</div>";
             //echo $recipe->getTitle(). "<br>" . $recipe->getCalories(). "<br>" . $recipe->getCuisine(). "<br>"  . $recipe->getDuration(). "<br>"  . $recipe->getDifficulty(). "<br>" . $recipe->getInstructions(). "<br>";
             
-            echo "<li>Recipe id: {$recipe->getId()} <br> title: {$recipe->getTitle()} <br> Calories: {$recipe->getCalories()} <br> Cuisine type: {$recipe->getCuisine()} <br> Duration: {$recipe->getDuration()} <br> Difficulty: {$recipe->getDifficulty()} <br> Instructions: {$recipe->getInstructions()} </li> <br>";
+            echo "<li>Recipe id: {$recipe->GetId()} <br> title: {$recipe->GetTitle()} <br> Calories: {$recipe->GetCalories()} <br> Cuisine type: {$recipe->GetCuisine()} <br> Duration: {$recipe->GetDuration()} <br> Difficulty: {$recipe->GetDifficulty()} <br> Instructions: {$recipe->GetInstructions()} </li> <br>";
         }
         echo "</ol>";
     ?>
