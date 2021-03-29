@@ -32,11 +32,12 @@ class Control{
                 return "$user";
             }
         }
+        return null;
     }
 
     //recipes
-    public function AddRecipe($title, $calories, $cuisine, $duration, $difficulty, $instructions){
-        $recipe = new Recipe($title, $calories, $cuisine, $duration, $difficulty, $instructions);
+    public function AddRecipe($id, $title, $calories, $cuisine, $duration, $difficulty, $instructions){
+        $recipe = new Recipe($id, $title, $calories, $cuisine, $duration, $difficulty, $instructions);
         $this->recipes[] = $recipe;
     }
 
@@ -58,6 +59,7 @@ class Control{
                 return $recipe;
             }
         }
+        return null;
     }
 
 }

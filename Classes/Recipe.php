@@ -10,7 +10,7 @@ class Recipe{
     //variables
     private $ingredients = array();
 
-    public static $idCounter = 1000;
+    //public static $idCounter = 1000;
     private $id;
     private $title;
     private $calories;
@@ -20,21 +20,26 @@ class Recipe{
     private $instructions;
 
     //constructor
-    public function __construct($title, $calories, $cuisine, $duration, $difficulty, $instructions){
+    public function __construct($id, $title, $calories, $cuisine, $duration, $difficulty, $instructions){
+        $this->id = $id;
         $this->title = $title;
         $this->calories = $calories;
         $this->cuisine = $cuisine;
         $this->duration = $duration;
         $this->difficulty = $difficulty;
         $this->instructions = $instructions;
-
-        //static variable need to be accessed using self
-        $this->id = self::$idCounter;
-
-        self::$idCounter++;
+//
+//        //static variable need to be accessed using self
+//        $this->id = self::$idCounter;
+//
+//        self::$idCounter++;
     }
 
     //setters
+    public function SetId($id){
+        $this->id = $id;
+    }
+
     public function SetTitle($title){
         $this->title = $title;
     }
@@ -60,7 +65,7 @@ class Recipe{
     }
 
     //getters
-    public function GetID(){
+    public function GetId(){
         return $this->id;
     }
 
@@ -104,7 +109,7 @@ class Recipe{
     }
 
     public function GetAllIngredients(){
-        array_values($this->ingredients);
+        return $this->ingredients;
     }
 }
 ?>

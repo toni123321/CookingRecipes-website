@@ -18,13 +18,15 @@
     </style>
 </head>
 <body>
-    <?php include '../Classes/Control.php'; ?>
+    <?php include '../Classes/DbControl.php'; ?>
     
     <?php 
         $control = new Control();
-        $control->AddRecipe("Pancakes with chocolate", 250, CuisineType::AMERICAN, 0.30, DifficultyLevel::MEDIUM, "Some text 1!");
-        $control->AddRecipe("Risotto", 100, CuisineType::ITALIAN, 1.00, DifficultyLevel::MEDIUM, "Some text 2!");
-        
+        //$control->AddRecipe("Pancakes with chocolate", 250, CuisineType::AMERICAN, 0.30, DifficultyLevel::MEDIUM, "Some text 1!");
+        //$control->AddRecipe("Risotto", 100, CuisineType::ITALIAN, 1.00, DifficultyLevel::MEDIUM, "Some text 2!");
+        $dbControl = new DbControl();
+        $dbControl->GetRecipes($control);
+
         echo '<h2>Recipes</h2>';
         echo '<ol class="recipes">';
         
