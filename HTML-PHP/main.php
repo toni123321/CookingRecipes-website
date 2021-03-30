@@ -17,7 +17,7 @@ echo
                 <li><a href="../HTML-PHP/homepage.php">Home</a></li>
                 <li><a href="../HTML-PHP/recipesPage.php">Recipes</a></li>
                 <li><a href="../HTML-PHP/aboutPage.php">About</a></li>
-                <li><a href="">Account</a></li>
+                <li><a href="../HTML-PHP/accountPage.php">Account</a></li>
             </ul>
         </nav>
         <div id="mobileHeader"></div>

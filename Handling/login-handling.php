@@ -34,6 +34,7 @@
 //    }
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
             $email = test_input($_POST["email"]);
             $password = test_input($_POST["password"]);
 
@@ -54,7 +55,11 @@
                 // $user = CheckCredentials($email, $password);
                 // echo "first name: " . $user->getFName() . "<br>" . " email: " . $user->getEmail() . "<br>";
                 // echo '<a href="http://localhost/s2-wad/login.php">Go to login page</a>';
-                header("Location:homepage.php");
+                session_start();
+                $currUser = CheckCredentials($email, $password);
+                $_SESSION['loggedUser'] = serialize($currUser);
+
+                header("Location:accountPage.php");
                 exit;
             }
             else{
