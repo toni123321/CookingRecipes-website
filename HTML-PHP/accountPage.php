@@ -18,6 +18,7 @@ if(isset($_SESSION['loggedUser'])) {?>
         $user = unserialize($_SESSION['loggedUser']);
         echo $user->GetFName();
     ?>
+
     </body>
     </html>
 <?php

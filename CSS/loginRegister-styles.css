@@ -1,8 +1,24 @@
 
-.form-parent {
-    margin:0 auto;
-    width:500px;    
+#flexContainer{
+    display:flex;
+    padding:1.5rem;
 }
+
+
+
+#flexContainer > * + * {
+    margin-left: 2em;
+}
+
+.form-parent{
+    /*margin:0 auto;*/
+    width:500px;
+}
+
+.register {
+    margin-block: auto; /* put this div in vertically centered */
+}
+
 
 input[type=text], input[type=password], input[type=date] {
     width: 100%;
@@ -49,9 +65,36 @@ span.password {
 }
 
 @media screen and (max-width: 400px) {
-    .form-parent {
-        width:250px;
+    #flexContainer {
+        flex-direction:column;
+        align-items:center;
+        padding:1rem;
     }
+
+    #flexContainer > * + * {
+        margin-left: unset;
+        margin-bottom: 2em;
+    }
+
+    .register {
+        background-color: lightblue;
+        box-sizing: border-box;
+        width:250px;
+        display: flex;
+        flex-direction:column;
+        align-items:center;
+        padding:1rem;
+    }
+
+    .register {
+        order:1;
+    }
+
+    .form-parent {
+        order:2;
+        width: 250px;
+    }
+
     span.password {
         display:block;
         float:none;

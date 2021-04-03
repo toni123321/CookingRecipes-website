@@ -3,12 +3,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Success login</title>
+    <title>Log in</title>
 </head>
 <body>
     <!-- Include php classes -->
     <?php include '../Classes/DbControl.php'; ?>
-
 
     <?php
         // Make a new object of type Control
@@ -18,20 +17,12 @@
         $dbControl = new DbControl();
         $dbControl->GetUsers($control);
 
-
         function test_input($data) {
             $data = trim($data);
             $data = stripslashes($data);
             $data = htmlspecialchars($data);
             return $data;
         }
-//
-//    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-//        foreach ($control->GetAllUsers() as $user)
-//        {
-//            echo $user->GetFName();
-//        }
-//    }
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -46,15 +37,10 @@
                         return $user;
                     }
                 }
-
                 return null;
             }
             if(CheckCredentials($email, $password) != null)
             {
-                // echo "You successfully log in!" . "<br>";
-                // $user = CheckCredentials($email, $password);
-                // echo "first name: " . $user->getFName() . "<br>" . " email: " . $user->getEmail() . "<br>";
-                // echo '<a href="http://localhost/s2-wad/login.php">Go to login page</a>';
                 session_start();
                 $currUser = CheckCredentials($email, $password);
                 $_SESSION['loggedUser'] = serialize($currUser);
