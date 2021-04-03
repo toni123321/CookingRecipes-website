@@ -1,13 +1,17 @@
+@media screen and (min-width: 500px) {
+    .container {
+        display: flex;
+        justify-content: center;
+    }
+}
 
 #flexContainer{
     display:flex;
     padding:1.5rem;
 }
 
-
-
 #flexContainer > * + * {
-    margin-left: 2em;
+    margin-left: 4em;
 }
 
 .form-parent{
@@ -17,10 +21,17 @@
 
 .register {
     margin-block: auto; /* put this div in vertically centered */
+    background-color: lightblue;
+    box-sizing: border-box;
+    width:250px;
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+    padding:1rem;
 }
 
 
-input[type=text], input[type=password], input[type=date] {
+input[type=text], input[type=password]{
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -58,13 +69,19 @@ span.password {
     padding-top: 16px;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 850px) {
     .form-parent {
         width:400px;
     }
 }
+@media screen and (max-width: 780px) {
+    .form-parent {
+        width:250px;
+    }
+}
 
-@media screen and (max-width: 400px) {
+
+@media screen and (max-width: 620px) {
     #flexContainer {
         flex-direction:column;
         align-items:center;

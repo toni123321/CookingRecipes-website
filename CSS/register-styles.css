@@ -1,0 +1,42 @@
+
+.form-parent {
+    margin:0 auto;
+    width:500px;
+    margin-block:3rem;
+}
+
+input[type=text], input[type=password], input[type=date] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid blue;
+    box-sizing: border-box;
+}
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.avatar {
+    text-align:center;
+    margin: 12px 0 12px 0;
+}
+
+@media screen and (max-width: 700px) {
+    .form-parent {
+        width:400px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .form-parent {
+        width:250px;
+    }
+
+}
