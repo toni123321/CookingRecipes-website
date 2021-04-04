@@ -18,13 +18,13 @@
     </style>
 </head>
 <body>
-    <?php include '../Classes/DbControl.php'; ?>
+    <?php include '../DataLayer/RecipeDbControl.php'; ?>
     
     <?php 
-        $control = new UserControl();
+        $control = new RecipeControl();
         //$control->AddRecipe("Pancakes with chocolate", 250, CuisineType::AMERICAN, 0.30, DifficultyLevel::MEDIUM, "Some text 1!");
         //$control->AddRecipe("Risotto", 100, CuisineType::ITALIAN, 1.00, DifficultyLevel::MEDIUM, "Some text 2!");
-        $dbControl = new DbControl();
+        $dbControl = new RecipeDbControl();
         $dbControl->GetRecipes($control);
 
         echo '<h2>Recipes</h2>';

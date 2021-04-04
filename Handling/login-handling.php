@@ -14,7 +14,7 @@
         $control = new UserControl();
         //$control->AddUser("Nick", "Doe", new DateTime('01/11/2000'), "nick.doe00@gmail.com", "pass123");
         //$control->AddUser("John", "Newman", new DateTime('05/12/2005'), "johnxD@gmail.com", "pass321");
-        $dbControl = new DbControl();
+        $dbControl = new UserDbControl();
         $dbControl->GetUsers($control);
 
         function test_input($data) {
@@ -45,7 +45,7 @@
                 $currUser = CheckCredentials($email, $password);
                 $_SESSION['loggedUser'] = serialize($currUser);
 
-                header("Location:accountPage.php");
+                header("Location:../HTML-PHP/accountPage.php");
                 exit;
             }
             else{

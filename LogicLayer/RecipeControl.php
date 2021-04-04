@@ -1,13 +1,12 @@
 
 <!-- Control class -->
-<?php include '../Models/User.php'; ?>
 <?php include '../Models/Recipe.php'; ?>
 
 <?php
 class RecipeControl{
-
     private $recipes = array();
 
+    //recipes
     public function AddRecipe($id, $title, $calories, $cuisine, $duration, $difficulty, $instructions){
         $recipe = new Recipe($id, $title, $calories, $cuisine, $duration, $difficulty, $instructions);
         $this->recipes[] = $recipe;
