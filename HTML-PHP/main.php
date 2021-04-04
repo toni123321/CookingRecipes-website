@@ -1,4 +1,10 @@
 
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
+
 <header>
     <div id="name"><h3>NAME</h3></div>
     <nav>
@@ -11,6 +17,8 @@
                 <?php
                     if (isset($_SESSION['loggedUser'])) {
                         echo '<a href="../HTML-PHP/accountPage.php">Account</a>';
+                        echo '<li><a href="../Handling/logout-handling.php">Log out</a></li>';
+
                     }
                     else{
                         echo '<a href="../HTML-PHP/login.php">Log in</a>';
@@ -25,7 +33,7 @@
             <?php
                 if (isset($_SESSION['loggedUser'])) {
                     echo '<li><a href="../HTML-PHP/accountPage.php">Account</a></li>';
-                    echo '<li><a href="#">Log out</a></li>';
+                    echo '<li><a href="../Handling/logout-handling.php">Log out</a></li>';
                 }
                 else{
                     echo '<li><a href="../HTML-PHP/login.php">Log in</a></li>';
