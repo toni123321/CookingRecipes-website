@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(isset($_SESSION['loggedUser'])) {?>
-    <?php include '../Classes/Control.php';?>
+    <?php include '../Classes/UserControl.php';?>
     <html lang="en">
     <head>
         <meta charset="UTF-8">

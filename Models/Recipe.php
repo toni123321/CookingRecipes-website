@@ -1,8 +1,8 @@
 
 <!-- Recipe class -->
 <?php include 'Ingredient.php'; ?>
-<?php include 'DifficultyLevel.php'; ?>
-<?php include 'CuisineType.php'; ?>
+<?php include '../Models/Enums/DifficultyLevel.php'; ?>
+<?php include '../Models/Enums/CuisineType.php'; ?>
 
 <?php
 class Recipe{

@@ -1,6 +1,6 @@
 
-<!-- Control class -->
-<?php include '../Classes/Control.php'; ?>
+<!-- UserControl class -->
+<?php include '../Models/UserControl.php'; ?>
 
 <?php
 class DbControl{
@@ -31,7 +31,7 @@ class DbControl{
             echo 'You have successfully inserted new employee!';
 
 
-//            $control = new Control();
+//            $control = new UserControl();
 //            $control->AddUser($id, $fname, $lname, $dob, $email, $password);
 
 
@@ -43,7 +43,7 @@ class DbControl{
         }
     }
 
-    public function GetUsers(Control $control){
+    public function GetUsers(UserControl $control){
         try {
 
             $this->conn = new PDO("mysql:host=$this->host;dbname=$this->dbName", $this->username,  $this->password);
@@ -79,7 +79,7 @@ class DbControl{
 
     }
 
-    public function GetRecipes(Control $control){
+    public function GetRecipes(UserControl $control){
         try {
 
             $this->conn = new PDO("mysql:host=$this->host;dbname=$this->dbName", $this->username,  $this->password);

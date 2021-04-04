@@ -10,8 +10,8 @@
     <?php include '../Classes/DbControl.php'; ?>
 
     <?php
-        // Make a new object of type Control
-        $control = new Control();
+        // Make a new object of type UserControl
+        $control = new UserControl();
         //$control->AddUser("Nick", "Doe", new DateTime('01/11/2000'), "nick.doe00@gmail.com", "pass123");
         //$control->AddUser("John", "Newman", new DateTime('05/12/2005'), "johnxD@gmail.com", "pass321");
         $dbControl = new DbControl();
