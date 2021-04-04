@@ -6,7 +6,7 @@
     <title>Success registration</title>
 </head>
 <body>
-    <?php include '../Classes/DbControl.php'; ?>
+    <?php include '../DataLayer/UserDbControl.php'; ?>
     <?php
         function test_input($data) {
             $data = trim($data);

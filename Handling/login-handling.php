@@ -7,7 +7,7 @@
 </head>
 <body>
     <!-- Include php classes -->
-    <?php include '../Classes/DbControl.php'; ?>
+    <?php include '../DataLayer/UserDbControl.php'; ?>
 
     <?php
         // Make a new object of type UserControl
