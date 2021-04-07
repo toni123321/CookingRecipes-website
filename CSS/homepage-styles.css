@@ -75,7 +75,7 @@
     align-items: center;
   }
 
-  .recipePreview{
+ .recipePreview{
     border:0.1rem solid black;
     border-radius: 15px;
     height: 17rem;
@@ -83,10 +83,15 @@
     overflow:hidden;
   }
 
-  #pic{
+  .recipePreview:hover{
+    height: 17.5rem;
+    width: 20.5rem;
+  }
+
+#pic{
     height: 70%;
     background-color: #151515;
-  }
+}
 
   #title{
     height: 10%;
@@ -95,6 +100,11 @@
     font-size: larger;
     display: flex;
     align-items: center;
+  }
+
+  #duration, #difficulty{
+    margin-left: 2%;
+    margin-right: 2%;
   }
 
 /*   
