@@ -8,7 +8,7 @@
   nav > .dropdown {
     display: none;
   }
-  
+
   header {
     margin-top: -0.5rem;
     display:grid;
@@ -16,7 +16,7 @@
     grid-template-rows: 50vh;
     grid-template-areas:
       "name search nav";
-    text-align: center; 
+    text-align: center;
     font-size: 1rem; /* 1rem = default browser pixels(16px)  */
     font-weight: 800; /* above 700 bold font */
     text-transform: uppercase; /* makes the text uppercase */
@@ -24,8 +24,9 @@
     background-repeat: no-repeat;
     background-position:center;
     background-size: cover;
+    margin-bottom: -3rem;
   }
-  
+
   #search > form, #name > h3, nav > ul {
     color:white;
     background-image: linear-gradient(rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0.7) 20%);
@@ -49,7 +50,7 @@
     text-decoration: none;
     color:white;
   }
-  
+
   #name{
     /* background: #18ffff; */
     grid-area: name;
@@ -61,18 +62,41 @@
   #search {
     grid-area: search;
   }
-  
+
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-gap: 2rem;
-    
+
     max-width: 960px;
     margin: 0 auto 30px;
     margin-top:5%;
     justify-items: center;
     align-items: center;
   }
+
+  .recipePreview{
+    border:0.1rem solid black;
+    border-radius: 15px;
+    height: 17rem;
+    width: 20rem;
+    overflow:hidden;
+  }
+
+  #pic{
+    height: 70%;
+    background-color: #151515;
+  }
+
+  #title{
+    height: 10%;
+    background-color: darkgray;
+    font-weight: bold;
+    font-size: larger;
+    display: flex;
+    align-items: center;
+  }
+
 /*   
   .grid > div {
     background: black;
@@ -95,6 +119,7 @@
     height: 100%;
     object-fit: contain;
   } */
+
 
 }
   

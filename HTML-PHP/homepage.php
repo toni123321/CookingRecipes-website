@@ -10,5 +10,44 @@
 </head>
 <body>
     <?php include '../HTML-PHP/main.php';?>
+    <?php include '../DataLayer/RecipeDbControl.php'; ?>
+
+
+    <div class="grid">
+    <?php
+    $control = new RecipeControl();
+    //$control->AddRecipe("Pancakes with chocolate", 250, CuisineType::AMERICAN, 0.30, DifficultyLevel::MEDIUM, "Some text 1!");
+    //$control->AddRecipe("Risotto", 100, CuisineType::ITALIAN, 1.00, DifficultyLevel::MEDIUM, "Some text 2!");
+    $dbControl = new RecipeDbControl();
+    $dbControl->GetRecipes($control);
+
+    $randomRecipes = $control->GetAllRecipes();
+    shuffle($randomRecipes);
+    $recipe1ID = $randomRecipes[0]->GetId();
+    $recipe2ID = $randomRecipes[1]->GetId();
+    $recipe3ID = $randomRecipes[2]->GetId();
+
+    $loopCounter = 0;
+
+    foreach($randomRecipes as $recipe)
+    {
+            if($loopCounter >= 3){
+                break;
+            }
+            else{
+            echo '<div class = "recipePreview">';
+            echo '<div id="pic"></div>';
+            echo '<div id="title">'.$recipe->GetTitle().'</div>';
+            echo '<div id="duration">Duration: '.$recipe->GetDuration().'</div>';
+            echo '<div id="difficulty">Difficulty '.$recipe->GetDifficulty().'</div>';
+            echo '</div>';
+            }
+
+            $loopCounter++;
+    }
+    echo "</ol>";
+    ?>
+    </div>
 </body>
+
 </html>
