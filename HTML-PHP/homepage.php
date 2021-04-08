@@ -48,6 +48,7 @@
     echo "</ol>";
     ?>
     </div>
+    <div class="moreRecipesButton"><a href="../HTML-PHP/recipesPage.php">Discover more recipes</a></div>
 </body>
 
 </html>
