@@ -13,6 +13,7 @@
     <?php include '../DataLayer/RecipeDbControl.php'; ?>
 
 
+
     <div class="grid">
     <?php
     $control = new RecipeControl();
@@ -34,20 +35,23 @@
             if($loopCounter >= 3){
                 break;
             }
-            else{
-            echo '<div class = "recipePreview">';
-            echo '<div id="pic"></div>';
-            echo '<div id="title">'.$recipe->GetTitle().'</div>';
-            echo '<div id="duration">Duration: '.$recipe->GetDuration().'</div>';
-            echo '<div id="difficulty">Difficulty '.$recipe->GetDifficulty().'</div>';
-            echo '</div>';
+            else {
+                echo
+                    '
+              <div class="recipe">
+                <img id="recipeImg" src="../Images/avatarLogin.png" alt="">
+                <div class="recipeInfo" id="title"><span>' . $recipe->GetTitle() . '</span></div>
+                <div class="recipeInfo" id="duration">Duration: ' . $recipe->GetDuration() . '</div>
+                <div class="recipeInfo" id="difficulty">Difficulty ' . $recipe->GetDifficulty() . '</div>
+              </div>
+              ';
             }
-
             $loopCounter++;
     }
-    echo "</ol>";
     ?>
     </div>
+
+    <button class="moreRecipesButton" onclick="location.href='../HTML-PHP/recipesPage.php'" type="button">Discover more recipes</button>
 </body>
 
 </html>
