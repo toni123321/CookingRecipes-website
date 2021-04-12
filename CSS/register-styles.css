@@ -1,3 +1,13 @@
+.goToHomePage {
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    background-color: lightblue;
+    border-radius:3rem;
+    font-size: 1.2rem;
+}
+
 
 .form-parent {
     margin:0 auto;
@@ -13,7 +23,7 @@ input[type=text], input[type=password], input[type=date] {
     border: 1px solid blue;
     box-sizing: border-box;
 }
-button {
+#registerBtn {
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;

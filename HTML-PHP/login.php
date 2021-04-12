@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../CSS/login-styles.css">
 </head>
 <body>
-<button class="goToHomePage" onclick="location.href='../HTML-PHP/homepage.php'" type="button">Go to home page</button>
+    <button class="goToHomePage" onclick="location.href='../HTML-PHP/homepage.php'" type="button">Go to home page</button>
     <div class="container">
         <div id="flexContainer">
             <div class="form-parent">

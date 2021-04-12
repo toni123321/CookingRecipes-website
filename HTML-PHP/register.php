@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../CSS/register-styles.css">
 </head>
 <body>
-   
+    <button class="goToHomePage" onclick="location.href='../HTML-PHP/homepage.php'" type="button">Go to home page</button>
     <div class="form-parent">
 
         <form action="../Handling/registration-handling.php" method="post">
@@ -33,7 +33,7 @@
                     <label for="password"><b>Password</b></label>
                     <input type="password" placeholder="Enter password" name="password" required>
                         
-                    <button type="submit">Register</button>
+                    <button id="registerBtn" type="submit">Register</button>
                 </div>
             </fieldset>
         </form>

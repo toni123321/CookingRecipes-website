@@ -17,7 +17,7 @@ if (session_status() === PHP_SESSION_NONE) {
                 <?php
                     if (isset($_SESSION['loggedUser'])) {
                         echo '<a href="../HTML-PHP/accountPage.php">Account</a>';
-                        echo '<li><a href="../Handling/logout-handling.php">Log out</a></li>';
+                        echo '<a href="../Handling/logout-handling.php">Log out</a>';
 
                     }
                     else{
