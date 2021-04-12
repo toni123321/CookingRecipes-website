@@ -45,6 +45,12 @@
                 $currUser = CheckCredentials($email, $password);
                 $_SESSION['loggedUser'] = serialize($currUser);
 
+                if(isset($_POST["remember"]))
+                {
+                    $cookie_name = "user-email";
+                    $cookie_value = $currUser->GetEmail();
+                    setcookie($cookie_name, $cookie_value, time() + (60 * 1), "/");
+                }
                 header("Location:../HTML-PHP/accountPage.php");
                 exit;
             }

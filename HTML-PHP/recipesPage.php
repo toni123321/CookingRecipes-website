@@ -11,13 +11,31 @@
 <body>
     <?php include '../HTML-PHP/main.php';?>
 
+    <?php include '../DataLayer/RecipeDbControl.php'; ?>
+
+
     <div class="grid">
-        <div><img src="../Images/avatarLogin.png" alt=""></div>
-        <div><img src="../Images/avatarRegister.png" alt=""></div>
-        <div><img src="../Images/avatarLogin.png" alt=""></div>
-        <div><img src="../Images/avatarLogin.png" alt=""></div>
-        <div><img src="../Images/avatarRegister.png" alt=""></div>
-        <div><img src="../Images/avatarLogin.png" alt=""></div>
+        <?php
+        $control = new RecipeControl();
+        $dbControl = new RecipeDbControl();
+        $dbControl->GetRecipes($control);
+
+        $allRecipes = $control->GetAllRecipes();
+
+
+        foreach($allRecipes as $recipe)
+        {
+            echo '
+            <div class="recipe">
+            <img id="recipeImg" src="../Images/avatarLogin.png" alt="">
+            <div class="recipeInfo" id="title"><span>' . $recipe->GetTitle() . '</span></div>
+            <div class="recipeInfo" id="duration">Duration: ' . $recipe->GetDuration() . '</div>
+            <div class="recipeInfo" id="difficulty">Difficulty ' . $recipe->GetDifficulty() . '</div>
+            </div>
+            ';
+
+        }
+        ?>
     </div>
 </body>
 </html>

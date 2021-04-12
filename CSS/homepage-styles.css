@@ -6,6 +6,8 @@
   /*flex-direction: column;*/
   /*align-items: flex-start;*/
 }
+
+
 #recipeImg {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
@@ -38,8 +40,11 @@
   padding: 5px 10px;
   color: #000000;
   margin-bottom: 1%;
-
 }
+.moreRecipesButton:hover {
+  background-color: #00e9ff;
+}
+
 @media screen and (min-width: 831px) {
 
   /* Hide mobileHeader(image as independent element) when we are on desktop viewport */
