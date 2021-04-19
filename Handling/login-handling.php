@@ -49,7 +49,7 @@
                 {
                     $cookie_name = "user-email";
                     $cookie_value = $currUser->GetEmail();
-                    setcookie($cookie_name, $cookie_value, time() + (60 * 1), "/");
+                    setcookie($cookie_name, $cookie_value, time() + (60 * 5), "/");
                 }
                 header("Location:../HTML-PHP/accountPage.php");
                 exit;

@@ -28,7 +28,7 @@ class UserDbControl{
 
             $stmt = $this->conn->prepare($sql);
             $stmt->execute([$fname, $lname, $dob, $email, $password]);
-            echo 'You have successfully inserted new employee!';
+//            echo 'You have successfully inserted new employee!';
 
 
 //            $control = new UserControl();

@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/register-styles.css">
     <title>Success registration</title>
 </head>
 <body>
@@ -22,14 +23,31 @@
             $email = test_input($_POST["email"]);
             $password = test_input($_POST["password"]);
 
-            $dbControl = new DbControl();
+            $dbControl = new UserDbControl();
             $dbControl->InsertUser($fname, $lname, $dateOfBirth, $email, $password);
 
-            echo "Welcome, " . $fname . "<br>";
-            echo "You have registered successfully!" . "<br>";
-            echo '<a href="http://localhost/s2-wad/HTML-PHP/login.php">Go to login page</a>';
+//<!--            echo "Welcome, " . $fname . "<br>";-->
+//<!--            echo "You have registered successfully!" . "<br>";-->
+//<!--            echo '<a href="http://localhost/s2-wad/HTML-PHP/login.php">Go to login page</a>';-->
+//<!--            -->
+            echo
+            '
+                <div id="parent-successful_registration">
+                    <div id="successful_registration">
+                    
+                ';
+                        echo '<h2>Welcome, ' . $fname . '</h2>';
+                echo '
+                        <p>You have registered successfully!</p>
+                        
+                        <button class="goToHomePage" onclick="location.href=\'../HTML-PHP/homepage.php\'" type="button">Go to home page</button>
+                        <button class="goToLoginPage" onclick="location.href=\'../HTML-PHP/login.php\'" type="button">Log in</button>
+                        
+                    </div>
+                </div>
+                ';
         }
-        
+
     ?>
 </body>
 </html>
