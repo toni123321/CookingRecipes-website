@@ -1,0 +1,6 @@
+header {
+    grid-template-rows: 20vh;
+}
+#name > h3, nav > ul {
+    height:40%;
+}

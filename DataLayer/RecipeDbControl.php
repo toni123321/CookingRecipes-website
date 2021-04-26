@@ -35,16 +35,45 @@ class RecipeDbControl{
                 $duration = $row['Duration'];
                 $difficulty = $row['Difficulty'];
                 $instructions = $row['Instructions'];
-                $ingredientId = $row['IngredientID'];
-
-                $control->AddRecipe($id, $title, $calories, $cuisine, $duration, $difficulty, $instructions, $ingredientId);
-
+                $control->AddRecipe($id, $title, $calories, $cuisine, $duration, $difficulty, $instructions);
             }
+
             // Close DB connection
             $this->conn = null;
 
 
         } catch(PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
+    public function GetRecipeIngredients(RecipeControl $control)
+    {
+        try {
+            $this->conn = new PDO("mysql:host=$this->host;dbname=$this->dbName", $this->username, $this->password);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $sql = "SELECT ri.RecipeID, ri.IngredientID, i.Name, i.Quantity " .
+                "FROM `recipe-ingredients` as ri " .
+                "inner join ingredient as i " .
+                "on i.ID = ri.IngredientID";
+//            $sql = "SELECT ri.RecipeID, ri.IngredientID, i.Name, i.Quantity FROM recipe-ingredients as ri inner join ingredient as i on i.IngredientID = ri.IngredientID";
+
+            $result = $this->conn->query($sql);
+
+
+            foreach ($result as $row) {
+                $recipeId = $row['RecipeID'];
+                $ingredientId = $row['IngredientID'];
+                $currIngredientName = $row['Name'];
+                $currIngredientQuantity = $row['Quantity'];
+                $control->GetRecipe($recipeId)->AddIngredient($ingredientId, $currIngredientName, $currIngredientQuantity);
+
+            }
+            // Close DB connection
+            $this->conn = null;
+        }
+        catch(PDOException $e) {
             echo $e->getMessage();
         }
     }

@@ -14,7 +14,7 @@ class RecipeControl{
 
     public function RemoveRecipe($id){
         foreach($this->recipes as $recipe) {
-            if($recipe->id == $id){
+            if($recipe->GetId() == $id){
                 //todo - remove
             }
         }
@@ -26,7 +26,7 @@ class RecipeControl{
 
     public function GetRecipe($id){
         foreach($this->recipes as $recipe) {
-            if($recipe->id == $id){
+            if($recipe->GetId() == $id){
                 return $recipe;
             }
         }

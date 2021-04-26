@@ -2,18 +2,15 @@
 class Ingredient{
 
     //variables
-    public static $idCounter = 1000;
     private $id;
     private $name;
     private $quantity;
 
     //constructor
-    public function __construct($name, $quantity){
+    public function __construct($id, $name, $quantity){
+        $this->id = $id;
         $this->name = $name;
         $this->quantity = $quantity;
-
-        $this->id = self::$idCounter;
-        self::$idCounter++;
     }
 
     //setters

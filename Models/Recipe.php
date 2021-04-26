@@ -93,9 +93,9 @@ class Recipe{
     }
 
     //array methods
-    public function AddIngredient($name, $quantity){
-        $ingredient = new Ingredient($name, $quantity);
-        $ingredients[] = $ingredient;
+    public function AddIngredient($id, $name, $quantity){
+        $ingredient = new Ingredient($id, $name, $quantity);
+        $this->ingredients[] = $ingredient;
     }
 
     public function RemoveIngredient($id){

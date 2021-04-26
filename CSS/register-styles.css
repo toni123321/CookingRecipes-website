@@ -1,7 +1,7 @@
 body {
     background-color: white;
+    margin: 0 0;
 }
-
 
 .goToHomePage, .goToLoginPage {
     display:block;
@@ -13,8 +13,6 @@ body {
     font-size: 1.2rem;
 }
 
-
-
 .form-parent {
     background-color: white;
     margin:0 auto;
@@ -22,7 +20,7 @@ body {
     margin-block:3rem;
 }
 
-input[type=text], input[type=password], input[type=date] {
+input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -60,19 +58,20 @@ input[type=text], input[type=password], input[type=date] {
 
 #parent-successful_registration {
     display: flex;
+    height: 100vh;
     justify-content: center;
     align-items: center;
 
 }
+
 /* Success registration */
 #successful_registration {
-    margin-top:5%;
+    /*margin-top:5%;*/
 
     box-sizing: border-box;
     width:300px;
     display: flex;
     flex-direction:column;
-    justify-content: center;
     align-items:center;
     padding:1rem;
     background-color: bisque;

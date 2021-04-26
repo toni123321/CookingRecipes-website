@@ -19,17 +19,11 @@
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $fname = test_input($_POST["firstname"]);
             $lname = test_input($_POST["lastname"]);
-            $dateOfBirth = test_input($_POST["dateOfBirth"]);
             $email = test_input($_POST["email"]);
             $password = test_input($_POST["password"]);
 
             $dbControl = new UserDbControl();
-            $dbControl->InsertUser($fname, $lname, $dateOfBirth, $email, $password);
-
-//<!--            echo "Welcome, " . $fname . "<br>";-->
-//<!--            echo "You have registered successfully!" . "<br>";-->
-//<!--            echo '<a href="http://localhost/s2-wad/HTML-PHP/login.php">Go to login page</a>';-->
-//<!--            -->
+            $dbControl->InsertUser($fname, $lname, $email, $password);
             echo
             '
                 <div id="parent-successful_registration">

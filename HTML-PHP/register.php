@@ -24,9 +24,6 @@
                     <label for="lname"><b>Last name</b></label>
                     <input type="text" placeholder="Enter last name" name="lastname" required>
 
-                    <label for="dateOfBirth"><b>Date of birth</b></label>
-                    <input type="date" placeholder="" name="dateOfBirth" required>
-
                     <label for="email"><b>Email</b></label>
                     <input type="text" placeholder="Enter email" name="email" required>
 

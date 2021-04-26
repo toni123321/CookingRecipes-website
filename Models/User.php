@@ -7,16 +7,14 @@ class User{
     private $id;
     private $fname;
     private $lname;
-    private $dob;
     private $email;
     private $password;
 
     //constructor
-    public function __construct($id, $fname, $lname, $dob, $email, $password){
+    public function __construct($id, $fname, $lname, $email, $password){
         $this->id = $id;
         $this->fname = $fname;
         $this->lname = $lname;
-        $this->dob = $dob;
         $this->email = $email;
         $this->password = $password;
     }
@@ -33,10 +31,6 @@ class User{
 
     public function SetLName($lname){
         $this->lname = $lname;
-    }
-
-    public function SetDob($dob){
-        $this->dob = $dob;
     }
 
     public function SetEmail($email){
@@ -62,10 +56,6 @@ class User{
 
     public function GetLName(){
         return $this->lname;
-    }
-
-    public function GetDob(){
-        return $this->dob;
     }
 
     public function GetEmail(){

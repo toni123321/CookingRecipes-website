@@ -17,17 +17,17 @@ class UserDbControl{
 //    private $username = "root";
 //    private $password = "";
 
-    public function InsertUser($fname, $lname, $dob, $email, $password){
+    public function InsertUser($fname, $lname, $email, $password){
         try {
 
             $this->conn = new PDO("mysql:host=$this->host;dbname=$this->dbName", $this->username,  $this->password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            $sql = "INSERT INTO user(FirstName, LastName, DateOfBirth, Email, Password) 
-                    VALUES(?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO user(FirstName, LastName, Email, Password) 
+                    VALUES(?, ?, ?, ?)";
 
             $stmt = $this->conn->prepare($sql);
-            $stmt->execute([$fname, $lname, $dob, $email, $password]);
+            $stmt->execute([$fname, $lname, $email, $password]);
 //            echo 'You have successfully inserted new employee!';
 
 
@@ -59,11 +59,10 @@ class UserDbControl{
                 $id = $row['ID'];
                 $fname = $row['FirstName'];
                 $lname = $row['LastName'];
-                $dob = $row['DateOfBirth'];
                 $email = $row['Email'];
                 $password = $row['Password'];
 
-                $control->AddUser($id, $fname, $lname, $dob, $email, $password);
+                $control->AddUser($id, $fname, $lname, $email, $password);
 
             }
             // Close DB connection

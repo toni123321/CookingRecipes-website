@@ -6,9 +6,9 @@
 class UserControl{
     private $users = array();
 
-    public function AddUser($id, $fname, $lname, $dob, $email, $password){
+    public function AddUser($id, $fname, $lname, $email, $password){
 
-        $user = new User($id, $fname, $lname, $dob, $email, $password);
+        $user = new User($id, $fname, $lname, $email, $password);
         $this->users[] = $user;
     }
 

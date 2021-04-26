@@ -1,0 +1,68 @@
+
+header {
+    grid-template-rows: 20vh;
+}
+#name > h3, nav > ul {
+    height:40%;
+}
+
+
+.currRecipe {
+    width:800px;
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-top: 50px;
+    border: 0.1rem solid black;
+    border-radius: 15px;
+    padding-block: 20px;
+
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+#title {
+    font-weight: bold;
+    font-size: 25px;
+    font-style: oblique;
+}
+/* Middle part */
+.middle, .recipe-info {
+    margin-top:20px;
+    display:flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#recipeImg {
+    border: 2px solid black;
+    height: 300px;
+    width:400px;
+}
+.ingredients {
+    border: 2px solid black;
+    height: 300px;
+    width:300px;
+}
+.ingredients h3, .summary h3, .instructions > * {
+    text-align: center;
+}
+
+.summary, .instructions {
+    border: 2px solid black;
+    height: 300px;
+}
+.summary {
+    width: 300px;
+}
+.instructions {
+    width: 400px;
+}
+.summary > div {
+    margin-left:30px;
+}
+
+.recipeInfo:not(:last-child) {
+    padding-bottom: 20px;
+}
