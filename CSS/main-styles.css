@@ -1,3 +1,7 @@
+body {
+  margin-inline: 0;
+}
+
 .recipe {
   border: 0.1rem solid black;
   border-radius: 15px;
@@ -152,8 +156,6 @@
   }
 
   header {
-    margin-left: -3%;
-    margin-right: -3%;
     background-image:none;
     display:grid;
     grid-template-columns: 0.5fr 1fr;

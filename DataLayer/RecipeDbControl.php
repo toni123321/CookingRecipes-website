@@ -34,8 +34,9 @@ class RecipeDbControl{
                 $cuisine = $row['Cuisine'];
                 $duration = $row['Duration'];
                 $difficulty = $row['Difficulty'];
+                $servings = $row['Servings'];
                 $instructions = $row['Instructions'];
-                $control->AddRecipe($id, $title, $calories, $cuisine, $duration, $difficulty, $instructions);
+                $control->AddRecipe($id, $title, $calories, $cuisine, $duration, $difficulty, $servings, $instructions);
             }
 
             // Close DB connection

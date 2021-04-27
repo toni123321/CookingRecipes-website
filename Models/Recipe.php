@@ -18,21 +18,18 @@ class Recipe{
     private $duration;
     private $difficulty;
     private $instructions;
+    private $servings;
 
     //constructor
-    public function __construct($id, $title, $calories, $cuisine, $duration, $difficulty, $instructions){
+    public function __construct($id, $title, $calories, $cuisine, $duration, $difficulty, $servings , $instructions){
         $this->id = $id;
         $this->title = $title;
         $this->calories = $calories;
         $this->cuisine = $cuisine;
         $this->duration = $duration;
         $this->difficulty = $difficulty;
+        $this->servings = $servings;
         $this->instructions = $instructions;
-//
-//        //static variable need to be accessed using self
-//        $this->id = self::$idCounter;
-//
-//        self::$idCounter++;
     }
 
     //setters
@@ -58,6 +55,10 @@ class Recipe{
 
     public function SetDifficulty($difficulty){
         $this->difficulty = $difficulty;
+    }
+
+    public function SetServings($servings) {
+        $this->servings = $servings;
     }
 
     public function SetInstructions($instructions){
@@ -88,6 +89,11 @@ class Recipe{
     public function GetDifficulty(){
         return $this->difficulty;
     }
+
+    public function GetServings() {
+        return $this->servings;
+    }
+
     public function GetInstructions(){
         return $this->instructions;
     }

@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Current recipe</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/main-styles.css">
     <link rel="stylesheet" href="../CSS/currentRecipe-styles.css">
 </head>
@@ -46,16 +47,22 @@
                 </div>
             </div>
             <div class="recipe-info">
+                <div class="summary">
+                    <div class="summary-content">
+                        <div class="basic-info">
+                            <div id="servings"><i class="icon-food"></i> ' . $currRecipe->GetServings() . ' servings</div>
+                            <div id="duration"><i class="fa fa-clock-o"></i> ' . $currRecipe->GetDuration() . '</div>
+                        </div>
+                        <div class="additional-info">
+                            <div id="cuisine">Cuisine: ' . $currRecipe->GetCuisine() . '</div>
+                            <div id="difficulty">Difficulty: ' . $currRecipe->GetDifficulty() . '</div>
+                            <div id="calories">Calories: ' . $currRecipe->GetCalories() . '</div>
+                        </div>
+                    </div>
+                </div>
                 <div class="instructions">
                     <h3>Cooking instructions</h3>
                     <p>' . $currRecipe->GetInstructions() . '</p>
-                </div>
-                <div class="summary">
-                    <h3>Recipe summary</h3>
-                    <div class="recipeInfo" id="cuisine">Cuisine: ' . $currRecipe->GetCuisine() . '</div>
-                    <div class="recipeInfo" id="duration">Duration: ' . $currRecipe->GetDuration() . '</div>
-                    <div class="recipeInfo" id="difficulty">Difficulty ' . $currRecipe->GetDifficulty() . '</div>
-                    <div class="recipeInfo" id="calories">Calories: ' . $currRecipe->GetCalories() . '</div>
                 </div>
                 
             </div>

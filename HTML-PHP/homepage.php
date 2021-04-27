@@ -46,7 +46,7 @@
                     <div class="recipeInfo" id="duration">Duration: ' . $recipe->GetDuration() . '</div>
                     <div class="recipeInfo" id="difficulty">Difficulty ' . $recipe->GetDifficulty() . '</div>
                   </div>
-              </a>
+                </a>
               ';
             }
             $loopCounter++;
