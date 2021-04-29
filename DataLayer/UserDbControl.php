@@ -53,6 +53,7 @@ class UserDbControl{
 
             $result = $this->conn->query($sql);
 
+            $control->RemoveAllUsers();
 
             foreach ($result as $row)
             {

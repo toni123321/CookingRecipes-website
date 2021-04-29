@@ -12,29 +12,33 @@ $control = new UserControl();
 $dbControl = new UserDbControl();
 $dbControl->GetUsers($control);
 
-function FindUser($userEmail){
-    global $control;
+function FindUser($id, UserControl $control){
     foreach ($control->GetAllUsers() as $user)
     {
-        if($userEmail == $user->GetEmail() ){
+        if($id == $user->GetId() ){
             return $user;
         }
     }
     return null;
 }
 
+session_start();
+
 $fname = $_POST["fName"];
 $lname = $_POST["lName"];
 $email = $_POST["email"];
-$currUser = FindUser($email);
+$currUser = unserialize($_SESSION['loggedUser']);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $dbControl = new UserDbControl();
     $dbControl->UpdateUser($currUser->GetID(),$fname, $lname, $email);
 
-    header("Location:../HTML-PHP/accountPage.php");
+    $dbControl->GetUsers($control);
 
+    $_SESSION['loggedUser'] = serialize(FindUser($currUser->GetId(), $control));
+
+    header("Location:../HTML-PHP/accountPage.php");
 }
 ?>
 </body>

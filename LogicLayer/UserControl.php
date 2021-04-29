@@ -20,6 +20,10 @@ class UserControl{
         }
     }
 
+    public function RemoveAllUsers(){
+        $this->users = null;
+    }
+
     public function GetAllUsers(){
         return $this->users;
     }

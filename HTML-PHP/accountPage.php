@@ -1,6 +1,5 @@
 <link rel="stylesheet" href="../CSS/main-styles.css">
 <link rel="stylesheet" href="../CSS/editAccountDetails.css">
-
 <?php
 session_start();
 if(isset($_SESSION['loggedUser'])) {?>
