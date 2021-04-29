@@ -9,7 +9,7 @@ function saveRecipe()
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 if($('.fa-heart-o').css("color") == 'rgb(255, 0, 0)') {
-                    $('.fa-heart-o').css("color", "white");
+                    $('.fa-heart-o').css("color", "black");
                     alert("You remove recipe from favourites!");
                 }
                 else {
@@ -37,7 +37,7 @@ function loadRecipePage() {
         $('.fa-heart-o').css("color", "red");
     }
     else{
-        $('.fa-heart-o').css("color", "white");
+        $('.fa-heart-o').css("color", "black");
     }
 }
 

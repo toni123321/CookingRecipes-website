@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../CSS/main-styles.css">
+<?php include '../HTML-PHP/stylesheetScripts.php';?>
 <link rel="stylesheet" href="../CSS/editAccountDetails.css">
 <?php
 session_start();

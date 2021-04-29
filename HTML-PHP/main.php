@@ -16,11 +16,11 @@ if (session_status() === PHP_SESSION_NONE) {
                 <a href="../HTML-PHP/aboutPage.php">About</a>
                 <?php
                     if (isset($_SESSION['loggedUser'])) {
-                        echo '<a href="../HTML-PHP/accountPage.php">Account</a>';
-                        echo '<a href="../Handling/logout-handling.php">Log out</a>';
+                        echo '<a href="../HTML-PHP/accountPage.php"><i class="fa fa-fw fa-user"></i></a>';
+                        echo '<a href="../Handling/logout-handling.php"><i class="fas fa-sign-out-alt"></i></a>';
                     }
                     else{
-                        echo '<a href="../HTML-PHP/login.php">Log in</a>';
+                        echo '<a href="../HTML-PHP/login.php"><i class="fa fa-fw fa-user"></i></a>';
                     }
                 ?>
             </div>
@@ -31,11 +31,11 @@ if (session_status() === PHP_SESSION_NONE) {
             <li><a href="../HTML-PHP/aboutPage.php">About</a></li>
             <?php
                 if (isset($_SESSION['loggedUser'])) {
-                    echo '<li><a href="../HTML-PHP/accountPage.php">Account</a></li>';
-                    echo '<li><a href="../Handling/logout-handling.php">Log out</a></li>';
+                    echo '<li><a href="../HTML-PHP/accountPage.php"><i class="fa fa-fw fa-user"></i></a></li>';
+                    echo '<li><a href="../Handling/logout-handling.php"><i class="fas fa-sign-out-alt"></i></a></li>';
                 }
                 else{
-                    echo '<li><a href="../HTML-PHP/login.php">Log in</a></li>';
+                    echo '<li><a href="../HTML-PHP/login.php"><i class="fa fa-fw fa-user"></i></a></li>';
                 }
             ?>
         </ul>

@@ -42,10 +42,11 @@
     align-content: center;
     border-top-left-radius:15px;
     border-top-right-radius:15px;
-    background-color: lightgreen;
+    background-color: coral;
     font-weight: bold;
     font-size: 25px;
     font-style: oblique;
+
 }
 
 #title {
@@ -53,13 +54,13 @@
     align-self: center;
 }
 .saveRecipeToFavList {
-    background: #17BEBB;
+    background: antiquewhite;
     padding: 15px;
     border-radius: 51%;
     box-shadow: 0px 5px 30px 1px lightblue;
 }
 .fa-heart-o {
-    color:white;
+    color:black;
     font-size: 25px !important;
     font-weight: bold;
 }
@@ -79,22 +80,24 @@
     height: 300px;
 }
 .ingredients {
+    background-color: bisque;
     color:black;
     height: 300px;
     position: relative;
+    overflow: auto;
 }
-.ingredients::after {
-    content: "";
-    background:url("../Images/recipes-background-nav2.jpg");
-    background-size:100% 300px;
-    opacity: 0.5;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1;
-}
+/*.ingredients::after {*/
+/*    content: "";*/
+/*    background:url("../Images/recipes-background-nav2.jpg");*/
+/*    background-size:100% 300px;*/
+/*    opacity: 0.5;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    bottom: 0;*/
+/*    right: 0;*/
+/*    position: absolute;*/
+/*    z-index: -1;*/
+/*}*/
 
 .ingredients h3, .instructions > h3 {
     margin-top: 0;

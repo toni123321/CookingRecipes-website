@@ -6,7 +6,7 @@
     <title>Recipe website</title>
     <link rel="stylesheet" href="../CSS/main-styles.css">
     <!-- for the icons (searchBar) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <?php include '../HTML-PHP/stylesheetScripts.php';?>
     <link rel="stylesheet" href="../CSS/about-styles.css">
 </head>
 <body>
