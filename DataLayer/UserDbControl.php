@@ -74,7 +74,23 @@ class UserDbControl{
         }
     }
 
-   
+    public function UpdateUser($id, $fname, $lname, $email){
+        try {
+
+            $this->conn = new PDO("mysql:host=$this->host;dbname=$this->dbName", $this->username,  $this->password);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $sql = "UPDATE user SET FirstName= ?, LastName = ?, Email = ? WHERE ID = ?";
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([$fname, $lname, $email, $id]);
+
+            $this->conn = null;
+
+        } catch(PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
 
 }
 

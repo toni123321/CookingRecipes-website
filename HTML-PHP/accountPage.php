@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="../CSS/main-styles.css">
 <link rel="stylesheet" href="../CSS/editAccountDetails.css">
+
 <?php
 session_start();
 if(isset($_SESSION['loggedUser'])) {?>
@@ -19,17 +20,23 @@ if(isset($_SESSION['loggedUser'])) {?>
         <script src="../Libraries/jquery-3.6.0.min.js"></script>
         <script src="../JavaScript/removeSearchBar.js"></script>
         <?php
-            $user = unserialize($_SESSION['loggedUser']);
+            $loggedInUser = unserialize($_SESSION['loggedUser']);
         ?>
-        <form id="editAccForm">
+        <form id="editAccForm" action="../Handling/editAccount-handling.php" method="post">
             <label for="fName" class="editAccLabel">First name:</label><br>
-            <input type="text" class="editAccTextField" class="editAccForm" id="fName" name="fName" value="<?php echo $user->GetFName()?>"<br><br>
+            <input type="text" class="editAccTextField" class="editAccForm" id="fName" name="fName" value="<?php echo $loggedInUser->GetFName()?>"<br><br>
             <label for="lName" class="editAccLabel">Last name:</label><br>
-            <input type="text" class="editAccTextField" class="editAccForm" id="lName" name="lName" value="<?php echo $user->GetLName()?>"<br><br>
+            <input type="text" class="editAccTextField" class="editAccForm" id="lName" name="lName" value="<?php echo $loggedInUser->GetLName()?>"<br><br>
             <label for="email" class="editAccLabel">Email:</label><br>
-            <input type="text" class="editAccTextField" class="editAccForm"  id="email" name="email" value="<?php echo $user->GetEmail()?>"<br><br>
+            <input type="text" class="editAccTextField" class="editAccForm"  id="email" name="email" value="<?php echo $loggedInUser->GetEmail()?>"<br><br>
+            <label for="newPassword" class="editAccLabel">New password:</label><br>
+            <input type="text" class="editAccTextField" class="editAccForm"  id="newPassword" name="newPassword"?><br><br>
+            <label for="confNewPassword" class="editAccLabel">Confirm new password:</label><br>
+            <input type="text" class="editAccTextField" class="editAccForm"  id="confNewPassword" name="confNewPassword"?><br><br>
+            <label for="currPassword" class="editAccLabel">Current password:</label><br>
+            <input type="text" class="editAccTextField" class="editAccForm"  id="currPassword" name="currPassword"?><br><br>
+            <input class="saveChangesButton" type="submit" value="Save changes">
         </form>
-        <button class="saveChangesButton" onclick="location.href='../HTML-PHP/recipesPage.php'" type="button">Save changes</button>
         </body>
         </html>
 <?php
