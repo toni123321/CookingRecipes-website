@@ -74,6 +74,77 @@ class UserDbControl{
         }
     }
 
+    public function InsertRecipeToFavourites($userId, $recipeId)
+    {
+        try {
+
+            $this->conn = new PDO("mysql:host=$this->host;dbname=$this->dbName", $this->username,  $this->password);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $sql = "INSERT INTO user_favourite_recipe(UserID, FavRecipeID) " .
+                    "VALUES(?, ?)";
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([$userId, $recipeId]);
+
+            // Close DB connection
+            $this->conn = null;
+
+
+        } catch(PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+    public function DeleteRecipeFromFavourites($userId, $recipeId)
+    {
+        try {
+
+            $this->conn = new PDO("mysql:host=$this->host;dbname=$this->dbName", $this->username,  $this->password);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $sql = "DELETE from user_favourite_recipe " .
+                "where UserID=? and FavRecipeID=?";
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([$userId, $recipeId]);
+
+            // Close DB connection
+            $this->conn = null;
+
+
+        } catch(PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
+    public function GetUserFavRecipes(RecipeControl $control,  $user)
+    {
+        try {
+            $this->conn = new PDO("mysql:host=$this->host;dbname=$this->dbName", $this->username, $this->password);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $sql = "SELECT FavRecipeID from user_favourite_recipe as ufr " .
+                    "where ufr.UserID = ?";
+//
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([$user->GetId()]);
+
+            $result = $stmt->fetchAll();
+
+            foreach ($result as $row) {
+                $recipeId = $row['FavRecipeID'];
+
+                $recipe = $control->GetRecipe($recipeId);
+                $user->SaveRecipeToFavourites($recipe);
+            }
+            // Close DB connection
+            $this->conn = null;
+        }
+        catch(PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
     public function UpdateUser($id, $fname, $lname, $email){
         try {
 
@@ -91,7 +162,7 @@ class UserDbControl{
             echo $e->getMessage();
         }
     }
-
 }
+
 
 ?>

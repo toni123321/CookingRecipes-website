@@ -24,14 +24,15 @@ class UserControl{
         return $this->users;
     }
 
-    public function GetUser($email){
+    public function GetUser($id){
         foreach($this->users as $user) {
-            if($user->email == $email){
+            if($user->id == $id){
                 return "$user";
             }
         }
         return null;
     }
+
 }
 
 ?>

@@ -55,7 +55,7 @@ class RecipeDbControl{
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             $sql = "SELECT ri.RecipeID, ri.IngredientID, i.Name, i.Quantity " .
-                "FROM `recipe-ingredients` as ri " .
+                "FROM recipe_ingredient as ri " .
                 "inner join ingredient as i " .
                 "on i.ID = ri.IngredientID";
 //            $sql = "SELECT ri.RecipeID, ri.IngredientID, i.Name, i.Quantity FROM recipe-ingredients as ri inner join ingredient as i on i.IngredientID = ri.IngredientID";

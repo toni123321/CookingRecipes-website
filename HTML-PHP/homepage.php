@@ -55,7 +55,7 @@
     </div>
 
     <button class="moreRecipesButton" onclick="location.href='../HTML-PHP/recipesPage.php'" type="button">Discover more recipes</button>
-    <script src="../JavaScript/manageRecipe.js"></script>
+
 </body>
 
 </html>
