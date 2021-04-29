@@ -1,24 +1,87 @@
-.editAccTextField {
-    margin-bottom: 1%;
-    margin-top: 0.5%;
-    padding: 0.2rem;
-    font-size: 1.5rem;
-    border-width: 0px;
-    border-color: #ffffff;
-    background-color: #ffffff;
-    color: #000000;
-    border-style: solid;
-    border-radius: 0.5rem;
-    box-shadow: 0 0 0.5rem rgba(0,0,0,.75);
+@media screen and (min-width: 881px) {
+
+    .editAccTextField {
+        margin-bottom: 1%;
+        margin-top: 0.5%;
+        padding: 0.2rem;
+        font-size: 1.5rem;
+        border-width: 0px;
+        border-color: #ffffff;
+        background-color: #ffffff;
+        color: #000000;
+        border-style: solid;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 0.5rem rgba(0,0,0,.75);
+    }
+
+    #editAccForm{
+        text-align: center;
+        margin: 2% 28%;
+        padding: 3% 0%;
+        border: 0.1rem solid #57c8e7;
+    }
+
+    .editAccLabel{
+        font-size: 1.5rem;
+    }
 }
 
-#editAccForm{
-    text-align: center;
-    margin: 2% 28%;
-    padding: 3% 0%;
-    border: 0.1rem solid #57c8e7;
+@media screen and (max-width: 880px) and (min-width: 549px) {
+    /* tablet*/
+
+    .editAccTextField {
+        margin-bottom: 1%;
+        margin-top: 0.5%;
+        padding: 0.2rem;
+        font-size: 1.5rem;
+        border-width: 0px;
+        border-color: #ffffff;
+        background-color: #ffffff;
+        color: #000000;
+        border-style: solid;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 0.5rem rgba(0,0,0,.75);
+    }
+
+    #editAccForm{
+        text-align: center;
+        margin: 5% 15%;
+        padding: 3% 0%;
+        border: 0.1rem solid #57c8e7;
+    }
+
+    .editAccLabel{
+        font-size: 1.5rem;
+    }
+
 }
 
-.editAccLabel{
-    font-size: 1.5rem;
+@media screen and (max-width: 549px ) {
+    /* phone*/
+    .editAccTextField {
+        margin-bottom: 1%;
+        margin-top: 0.5%;
+        padding: 0.2rem;
+        font-size: 1.0rem;
+        border-width: 0px;
+        border-color: #ffffff;
+        background-color: #ffffff;
+        color: #000000;
+        border-style: solid;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 0.5rem rgba(0,0,0,.75);
+    }
+
+    #editAccForm{
+        text-align: center;
+        margin: 5% 5%;
+        padding: 3% 0%;
+        border: 0.1rem solid #57c8e7;
+    }
+
+    .editAccLabel{
+        font-size: 1.0rem;
+    }
 }
+
+
