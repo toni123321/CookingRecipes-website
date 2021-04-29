@@ -146,16 +146,16 @@ class UserDbControl{
         }
     }
 
-    public function UpdateUser($id, $fname, $lname, $email){
+    public function UpdateUser($id, $fname, $lname, $email, $password){
         try {
 
             $this->conn = new PDO("mysql:host=$this->host;dbname=$this->dbName", $this->username,  $this->password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            $sql = "UPDATE user SET FirstName= ?, LastName = ?, Email = ? WHERE ID = ?";
+            $sql = "UPDATE user SET FirstName= ?, LastName = ?, Email = ?, Password = ? WHERE ID = ?";
 
             $stmt = $this->conn->prepare($sql);
-            $stmt->execute([$fname, $lname, $email, $id]);
+            $stmt->execute([$fname, $lname, $email, $password, $id]);
 
             $this->conn = null;
 

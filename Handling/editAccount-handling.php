@@ -27,12 +27,29 @@ session_start();
 $fname = $_POST["fName"];
 $lname = $_POST["lName"];
 $email = $_POST["email"];
+$newPassword = $_POST["newPassword"];
+$confNewPassword = $_POST["confNewPassword"];
+$currPassword = $_POST["currPassword"];
+
 $currUser = unserialize($_SESSION['loggedUser']);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
     $dbControl = new UserDbControl();
-    $dbControl->UpdateUser($currUser->GetID(),$fname, $lname, $email);
+
+    $password = $currUser->GetPassword();
+
+    //password check
+    if($newPassword == $confNewPassword && $newPassword != $currPassword && $currPassword == $password){
+        $password = $newPassword;
+    }
+    else if($newPassword == $password){
+        //todo
+    }
+    else{
+        //todo
+    }
+
+    $dbControl->UpdateUser($currUser->GetID(),$fname, $lname, $email, $password);
 
     $dbControl->GetUsers($control);
 
