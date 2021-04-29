@@ -9,12 +9,14 @@
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/main-styles.css">
     <link rel="stylesheet" href="../CSS/currentRecipe-styles.css">
+    <link href="../Libraries/jquery-3.6.0.min.js">
 </head>
 <body>
     <?php include '../HTML-PHP/main.php'; ?>
     <script src="../Libraries/jquery-3.6.0.min.js"></script>
     <script src="../JavaScript/removeSearchBar.js"></script>
     <?php include '../DataLayer/RecipeDbControl.php'; ?>
+
 
     <?php
         $recipeId = (int)$_GET['recipeId'];
@@ -27,7 +29,10 @@
 
     echo '
         <div class="currRecipe">
-            <div class="recipeInfo" id="title">' . $currRecipe->GetTitle() . '</div>
+            <div class="upper">
+                <div class="recipeInfo" id="title">' . $currRecipe->GetTitle() . '</div>
+                <button class="saveRecipeToFavList"><i class="fa fa-heart-o"></i></button>
+            </div>
             <div class="middle">
                 <img id="recipeImg" src="../Images/recipes-background-nav2.jpg" alt="">
                 <div class="ingredients">
@@ -69,7 +74,50 @@
         </div>
     ';
     ?>
+    <?php
+        $userId = null;
+        $user = null;
+        $isRecipeSavedToFavList = false;
+        include '../Handling/login-handling.php';
+        if(isset($_SESSION['loggedUser'])) {
+            $user = unserialize($_SESSION['loggedUser']);
+            $userId = $user->GetId();
 
 
+
+            $userControl = new UserControl();
+            $recipeControl = new RecipeControl();
+
+            $userDBControl = new UserDbControl();
+            $recipeDBControl = new RecipeDbControl();
+            $userDBControl->GetUsers($userControl);
+            $recipeDBControl->GetRecipes($recipeControl);
+            $recipeDBControl->GetRecipeIngredients($recipeControl);
+
+
+            $userDBControl->GetUserFavRecipes($recipeControl, $user);
+            $favRecipes = $user->GetFavRecipes();
+            foreach ($favRecipes as $recipe) {
+                if ($recipe->GetId() == $recipeId) {
+                    $isRecipeSavedToFavList = true;
+                    break;
+                }
+            }
+        }
+
+
+
+    ?>
+    <script type="text/javascript">
+
+        var recipeId = <?php echo json_encode($recipeId); ?>;
+
+        var userId = <?php echo json_encode($userId); ?>;
+
+        var isRecipeSavedToFavList = <?php echo json_encode($isRecipeSavedToFavList); ?>;
+    </script>
+    <script src="../JavaScript/saveRecipeToFavList.js">
+
+    </script>
 </body>
 </html>

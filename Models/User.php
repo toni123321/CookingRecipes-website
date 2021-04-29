@@ -10,6 +10,8 @@ class User{
     private $email;
     private $password;
 
+    private $userFavRecipes = array();
+
     //constructor
     public function __construct($id, $fname, $lname, $email, $password){
         $this->id = $id;
@@ -64,6 +66,15 @@ class User{
 
     public function GetPassword(){
         return $this->password;
+    }
+
+    public function SaveRecipeToFavourites($recipe)
+    {
+        $this->userFavRecipes[] = $recipe;
+    }
+    public function GetFavRecipes()
+    {
+        return $this->userFavRecipes;
     }
 
 }
