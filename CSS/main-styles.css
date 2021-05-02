@@ -68,10 +68,9 @@ body {
     margin-top: -0.5rem;
     display:grid;
     grid-template-columns: 0.5fr 1fr;
-    grid-template-rows: 50vh;
+    grid-template-rows: 40vh;
     grid-template-areas:
-      "name nav"
-      "search search";
+      "name nav";
     text-align: center;
     font-size: 1rem; /* 1rem = default browser pixels(16px)  */
     font-weight: 800; /* above 700 bold font */
@@ -93,10 +92,7 @@ body {
   }
 
   #search {
-    grid-area: search;
-  }
-
-  #search > form {
+    margin-top: 2%;
     display: flex;
     justify-content:center;
   }
@@ -159,18 +155,17 @@ body {
     background-image:none;
     display:grid;
     grid-template-columns: 0.5fr 2fr;
-    grid-template-rows: 8vh 30vh 5vh;
+    grid-template-rows: 8vh 30vh;
     grid-template-areas:
       "name nav"
-      "image image"
-      "search search";
+      "image image";
     text-align: center;
     font-size: 1rem; /* 1rem = default browser pixels(16px)  */
     font-weight: 800; /* above 700 bold font */
     text-transform: uppercase; /* makes the text uppercase */
   }
 
-  #name > h3, nav > ul, #search > form {
+  #name > h3, nav > ul {
     color:black;
     margin-top:0;
     height:100%;
@@ -188,6 +183,11 @@ body {
     color:black;
   }
 
+  #search {
+    margin-top: 2%;
+    display: flex;
+    justify-content:center;
+  }
   /* fix size of search icon */
   .fa {
     font-size: medium !important;
@@ -207,10 +207,7 @@ body {
   nav{
     grid-area: nav;
   }
-  #search {
-    grid-area: search;
-    margin-top:5%;
-  }
+
 
 
   .grid {
@@ -240,11 +237,10 @@ body {
     background-image:none;
     display:grid;
     grid-template-columns: 1fr 0.7fr;
-    grid-template-rows: 8vh 30vh 5vh;
+    grid-template-rows: 8vh 30vh;
     grid-template-areas:
       "name nav"
-      "image image"
-      "search search";
+      "image image";
     text-align: center;
     font-size: 1rem; /* 1rem = default browser pixels(16px)  */
     font-weight: 800; /* above 700 bold font */
@@ -297,13 +293,19 @@ body {
     margin-right:10%;
   }
 
-  #name > h3, #search > form{
+  #name > h3 {
     color:black;
     margin-top:0;
     height:100%;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  #search {
+    margin-top: 2%;
+    display: flex;
+    justify-content:center;
   }
 
   /* fix size of search icon */
@@ -325,10 +327,6 @@ body {
   }
   nav{
     grid-area: nav;
-  }
-  #search {
-    grid-area: search;
-    margin-top: 5%;
   }
 
   .grid {

@@ -4,7 +4,6 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 ?>
-
 <header>
     <div id="name"><h3>NAME</h3></div>
     <nav>
@@ -41,10 +40,4 @@ if (session_status() === PHP_SESSION_NONE) {
         </ul>
     </nav>
     <div id="mobileHeader"></div>
-    <div id="search">
-        <form action="#">
-            <input type="text" placeholder="Search.." name="search">
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-    </div>
 </header>

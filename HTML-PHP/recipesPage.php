@@ -6,12 +6,17 @@
     <title>Recipe website</title>
     <!-- for the icons (searchBar) -->
     <?php include '../HTML-PHP/stylesheetScripts.php';?>
+    <script src="../Libraries/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <?php include '../HTML-PHP/main.php';?>
     <?php include '../DataLayer/RecipeDbControl.php'; ?>
 
+    <div id="search">
+        <input id="searchInput" type="text" placeholder="Search.." name="search">
+        <button id="searchBtn" type="submit"><i class="fa fa-search"></i></button>
 
+    </div>
     <div class="grid">
         <?php
         $control = new RecipeControl();
@@ -36,10 +41,9 @@
                 </div>
             </a>
             ';
-
-
         }
         ?>
     </div>
+    <script src="../JavaScript/searchRecipes.js"></script>
 </body>
 </html>
