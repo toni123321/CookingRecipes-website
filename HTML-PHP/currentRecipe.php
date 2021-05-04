@@ -22,7 +22,7 @@
         $control = new RecipeControl();
         $dbControl = new RecipeDbControl();
         $dbControl->GetRecipes($control);
-        $dbControl->GetRecipeIngredients($control);
+//        $dbControl->GetRecipeIngredients($control);
         $currRecipe = $control->GetRecipe($recipeId);
         $ingredients = $currRecipe->GetAllIngredients();
 
@@ -41,7 +41,7 @@
                         <?php
                             foreach($ingredients as $ingredient)
                             {
-                                echo "<li>{$ingredient->GetName()} - {$ingredient->GetQuantity()}</li>";
+                                echo "<li>{$ingredient}";
                             }
                         ?>
     <?php

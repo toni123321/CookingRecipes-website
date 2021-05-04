@@ -8,7 +8,7 @@
 class Recipe{
 
     //variables
-    private $ingredients = array();
+
 
     //public static $idCounter = 1000;
     private $id;
@@ -18,10 +18,11 @@ class Recipe{
     private $duration;
     private $difficulty;
     private $instructions;
+    private $ingredients = array();
     private $servings;
 
     //constructor
-    public function __construct($id, $title, $calories, $cuisine, $duration, $difficulty, $servings , $instructions){
+    public function __construct($id, $title, $calories, $cuisine, $duration, $difficulty, $servings, $ingredients , $instructions){
         $this->id = $id;
         $this->title = $title;
         $this->calories = $calories;
@@ -30,6 +31,7 @@ class Recipe{
         $this->difficulty = $difficulty;
         $this->servings = $servings;
         $this->instructions = $instructions;
+        $this->AddIngredient($ingredients);
     }
 
     //setters
@@ -99,20 +101,21 @@ class Recipe{
     }
 
     //array methods
-    public function AddIngredient($id, $name, $quantity){
-        $ingredient = new Ingredient($id, $name, $quantity);
-        $this->ingredients[] = $ingredient;
-    }
-
-    public function RemoveIngredient($id){
-        //unset( $ingredients[array_search( 'te', $ingredients )] );
-
-        foreach($this->ingredients as $ingredient) {
-            if($ingredient->id == $id){
-                // to-do delete
-            }
+    public function AddIngredient($ingredientsAsText){
+        foreach(explode("\n", $ingredientsAsText) as $line) {
+            $this->ingredients[] = $line;
         }
     }
+
+//    public function RemoveIngredient($id){
+//        //unset( $ingredients[array_search( 'te', $ingredients )] );
+//
+//        foreach($this->ingredients as $ingredient) {
+//            if($ingredient->id == $id){
+//                // to-do delete
+//            }
+//        }
+//    }
 
     public function GetAllIngredients(){
         return $this->ingredients;
