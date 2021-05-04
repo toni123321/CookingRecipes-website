@@ -7,8 +7,8 @@ class RecipeControl{
     private $recipes = array();
 
     //recipes
-    public function AddRecipe($id, $title, $calories, $cuisine, $duration, $difficulty, $servings, $ingredients, $instructions){
-        $recipe = new Recipe($id, $title, $calories, $cuisine, $duration, $difficulty, $servings, $ingredients, $instructions);
+    public function AddRecipe($id, $image, $title, $calories, $cuisine, $duration, $difficulty, $servings, $ingredients, $instructions){
+        $recipe = new Recipe($id, $image, $title, $calories, $cuisine, $duration, $difficulty, $servings, $ingredients, $instructions);
         $this->recipes[] = $recipe;
     }
 

@@ -32,8 +32,10 @@
                 <div class="recipeInfo" id="title">' . $currRecipe->GetTitle() . '</div>
                 <button class="saveRecipeToFavList"><i class="fa fa-heart-o"></i></button>
             </div>
-            <div class="middle">
-                <img id="recipeImg" src="../Images/recipes-background-nav2.jpg" alt="">
+            <div class="middle">';?>
+                <img id="recipeImg" src="<?php echo $currRecipe->GetImage(); ?>" alt="">
+                <?php
+                echo '
                 <div class="ingredients">
                     <h3>Ingredients</h3>
                     <ul>';

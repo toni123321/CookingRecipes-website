@@ -18,9 +18,6 @@ body {
 .recipe > #recipeImg {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
   /*margin: 0 auto; !* to put the img in thec center of the box *!*/
 
 }

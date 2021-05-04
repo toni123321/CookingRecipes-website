@@ -11,17 +11,17 @@ class RecipeDbControl{
     private $username = "dbi454917";
     private $password = "123";
 
-    public function InsertRecipe($title, $calories, $cuisine, $duration, $difficulty, $servings, $ingredients, $instructions){
+    public function InsertRecipe($image, $title, $calories, $cuisine, $duration, $difficulty, $servings, $ingredients, $instructions){
         try {
 
             $this->conn = new PDO("mysql:host=$this->host;dbname=$this->dbName", $this->username,  $this->password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            $sql = "INSERT INTO recipe(Title, Calories, Cuisine, Duration, Difficulty, Servings, Ingredients, Instructions) 
-                    VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO recipe(Image, Title, Calories, Cuisine, Duration, Difficulty, Servings, Ingredients, Instructions) 
+                    VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             $stmt = $this->conn->prepare($sql);
-            $stmt->execute([$title, $calories, $cuisine, $duration, $difficulty, $servings, $ingredients , $instructions]);
+            $stmt->execute([$image, $title, $calories, $cuisine, $duration, $difficulty, $servings, $ingredients , $instructions]);
 
             // Close DB connection
             $this->conn = null;
@@ -47,6 +47,7 @@ class RecipeDbControl{
             foreach ($result as $row)
             {
                 $id = $row['ID'];
+                $image = $row['Image'];
                 $title = $row['Title'];
                 $calories = $row['Calories'];
                 $cuisine = $row['Cuisine'];
@@ -55,7 +56,7 @@ class RecipeDbControl{
                 $servings = $row['Servings'];
                 $ingredients = $row['Ingredients'];
                 $instructions = $row['Instructions'];
-                $control->AddRecipe($id, $title, $calories, $cuisine, $duration, $difficulty, $servings, $ingredients, $instructions);
+                $control->AddRecipe($id, $image, $title, $calories, $cuisine, $duration, $difficulty, $servings, $ingredients, $instructions);
             }
 
             // Close DB connection

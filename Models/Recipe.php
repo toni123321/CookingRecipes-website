@@ -12,6 +12,7 @@ class Recipe{
 
     //public static $idCounter = 1000;
     private $id;
+    private $image;
     private $title;
     private $calories;
     private $cuisine;
@@ -22,8 +23,9 @@ class Recipe{
     private $servings;
 
     //constructor
-    public function __construct($id, $title, $calories, $cuisine, $duration, $difficulty, $servings, $ingredients , $instructions){
+    public function __construct($id, $image, $title, $calories, $cuisine, $duration, $difficulty, $servings, $ingredients , $instructions){
         $this->id = $id;
+        $this->image = $image;
         $this->title = $title;
         $this->calories = $calories;
         $this->cuisine = $cuisine;
@@ -37,6 +39,10 @@ class Recipe{
     //setters
     public function SetId($id){
         $this->id = $id;
+    }
+
+    public function SetImage($image) {
+        $this->image = $image;
     }
 
     public function SetTitle($title){
@@ -70,6 +76,10 @@ class Recipe{
     //getters
     public function GetId(){
         return $this->id;
+    }
+
+    public function GetImage(){
+        return $this->image;
     }
 
     public function GetTitle(){
