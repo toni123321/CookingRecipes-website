@@ -9,6 +9,7 @@ class User{
     private $lname;
     private $email;
     private $password;
+    private $isAdmin;
 
     private $userFavRecipes = array();
 
@@ -19,6 +20,17 @@ class User{
         $this->lname = $lname;
         $this->email = $email;
         $this->password = $password;
+        $this->isAdmin = false;
+
+    }
+
+    public function __constructAdmin($id, $fname, $lname, $email, $password){
+        $this->id = $id;
+        $this->fname = $fname;
+        $this->lname = $lname;
+        $this->email = $email;
+        $this->password = $password;
+        $this->isAdmin = true;
     }
 
     //setters
