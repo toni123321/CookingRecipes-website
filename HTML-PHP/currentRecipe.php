@@ -27,10 +27,9 @@
         $ingredients = $currRecipe->GetAllIngredients();
 
     echo '
-
          <div class="adminControls">
              <button class="editButton"><i class="far fa-edit"></i></button>
-             <button class="deleteButton"><i class="fas fa-trash"></i></button>
+             <button action="../Handling/removeOpenedRecipe.php"  class="deleteButton"><i class="fas fa-trash"></i></button>
         </div>
         <div class="currRecipe">
             <div class="upper">

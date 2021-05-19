@@ -89,5 +89,9 @@ class User{
         return $this->userFavRecipes;
     }
 
+    public function GetIsAdmin()
+    {
+        return $this->isAdmin;
+    }
 }
 ?>
