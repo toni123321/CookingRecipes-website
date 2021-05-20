@@ -21,16 +21,6 @@ class User{
         $this->email = $email;
         $this->password = $password;
         $this->isAdmin = false;
-
-    }
-
-    public function __constructAdmin($id, $fname, $lname, $email, $password){
-        $this->id = $id;
-        $this->fname = $fname;
-        $this->lname = $lname;
-        $this->email = $email;
-        $this->password = $password;
-        $this->isAdmin = true;
     }
 
     //setters
@@ -58,6 +48,11 @@ class User{
             //error msg
         }
     }
+
+    public function SetIsAdmin($isAdmin){
+        $this->isAdmin = $isAdmin;
+    }
+
 
     //getters
     public function GetId(){
