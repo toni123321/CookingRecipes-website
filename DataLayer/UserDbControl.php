@@ -164,6 +164,24 @@ class UserDbControl{
             echo $e->getMessage();
         }
     }
+
+    public function RemoveUser($id){
+        try {
+
+            $this->conn = new PDO("mysql:host=$this->host;dbname=$this->dbName", $this->username,  $this->password);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $sql = "UPDATE user SET FirstName= ?, LastName = ?, Email = ?, Password = ? WHERE ID = ?";
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([$fname, $lname, $email, $password, $id]);
+
+            $this->conn = null;
+
+        } catch(PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
 }
 
 
