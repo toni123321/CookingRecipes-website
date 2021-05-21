@@ -6,7 +6,10 @@
  $cookie_name = "user-email";
  /*$cookie_value = $currUser->GetEmail();*/
 
-setcookie($cookie_name, '', time() + (60 * 1), "/");
+if(isset($_COOKIE[$cookie_name]))
+{
+    setcookie($cookie_name, '', time() - (60 * 5), "/");
+}
  unset($_SESSION['loggedUser']);
  header("Location:../HTML-PHP/homepage.php");
 ?>
