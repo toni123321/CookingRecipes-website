@@ -37,8 +37,8 @@ if(isset($_SESSION['loggedUser'])) {?>
             <button class="saveChangesButton" type="submit"><i class="far fa-save"></i> Save changes</button>
         </form>
         <button onclick="location.href = '../Handling/removeUserAccountByUser.php'" class="deleteAccount"><i class="fas fa-user-times"></i> Delete account</button>
-        </body>
-        </html>
+    </body>
+    </html>
 <?php
 }
 else{

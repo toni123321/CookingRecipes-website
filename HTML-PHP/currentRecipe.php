@@ -26,10 +26,51 @@
         $currRecipe = $control->GetRecipe($recipeId);
         $ingredients = $currRecipe->GetAllIngredients();
     ?>
-    <div class="adminControls">
-         <button class="editButton"><i class="far fa-edit"></i></button>
-         <button class="deleteButton"><i class="fas fa-trash"></i></button>
-    </div>
+    <?php
+    $userId = null;
+    $user = null;
+    $isRecipeSavedToFavList = false;
+    include '../Handling/login-handling.php';
+    if(isset($_SESSION['loggedUser'])) {
+        $user = unserialize($_SESSION['loggedUser']);
+        $userId = $user->GetId();
+
+
+
+        $userControl = new UserControl();
+        $recipeControl = new RecipeControl();
+
+        $userDBControl = new UserDbControl();
+        $recipeDBControl = new RecipeDbControl();
+        $userDBControl->GetUsers($userControl);
+        $recipeDBControl->GetRecipes($recipeControl);
+        //$recipeDBControl->GetRecipeIngredients($recipeControl);
+
+
+        $userDBControl->GetUserFavRecipes($recipeControl, $user);
+        $favRecipes = $user->GetFavRecipes();
+        foreach ($favRecipes as $recipe) {
+            if ($recipe->GetId() == $recipeId) {
+                $isRecipeSavedToFavList = true;
+                break;
+            }
+        }
+
+        if($user->GetIsAdmin())
+        {
+            echo '
+                <div class="adminControls">
+                    <button class="editButton"><i class="far fa-edit"></i></button>
+                    <button class="deleteButton"><i class="fas fa-trash"></i></button>
+                </div>
+            ';
+        }
+    }
+
+
+
+    ?>
+
     <?php
     echo '
         
@@ -83,35 +124,7 @@
     ';
     ?>
     <?php
-        $userId = null;
-        $user = null;
-        $isRecipeSavedToFavList = false;
-        include '../Handling/login-handling.php';
-        if(isset($_SESSION['loggedUser'])) {
-            $user = unserialize($_SESSION['loggedUser']);
-            $userId = $user->GetId();
 
-
-
-            $userControl = new UserControl();
-            $recipeControl = new RecipeControl();
-
-            $userDBControl = new UserDbControl();
-            $recipeDBControl = new RecipeDbControl();
-            $userDBControl->GetUsers($userControl);
-            $recipeDBControl->GetRecipes($recipeControl);
-            //$recipeDBControl->GetRecipeIngredients($recipeControl);
-
-
-            $userDBControl->GetUserFavRecipes($recipeControl, $user);
-            $favRecipes = $user->GetFavRecipes();
-            foreach ($favRecipes as $recipe) {
-                if ($recipe->GetId() == $recipeId) {
-                    $isRecipeSavedToFavList = true;
-                    break;
-                }
-            }
-        }
 
 
 
