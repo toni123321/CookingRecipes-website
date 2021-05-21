@@ -61,6 +61,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
     }
 
+    $msg = "You have successfully applied changes to user with id: {$user->GetId()}";
+    $_SESSION['edit-user-msg'] = $msg;
+
     header('Location:../HTML-PHP/editSelectedUser.php?userIndex=' . $indexEditedUser);
 }
 ?>

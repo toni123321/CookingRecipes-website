@@ -26,6 +26,7 @@ if(isset($_GET['userId']) && isset($_GET['recipeId'])) {
     if($user != null && $user->GetIsAdmin() == true){
         $recipeDBControl->RemoveRecipe($recipeId);
 
+        //deletes the image (if any)
         if (file_exists($recipeImgUrl)) {
             unlink($recipeImgUrl);
         }

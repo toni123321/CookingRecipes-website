@@ -19,6 +19,15 @@ if(isset($_SESSION['loggedUser'])) {?>
     <script src="../Libraries/jquery-3.6.0.min.js"></script>
     <script src="../JavaScript/removeSearchBar.js"></script>
     <?php
+    if(isset($_SESSION['edit-user-msg']))
+    {
+        $msg = (string) $_SESSION['edit-user-msg'];
+        echo '<h3 class="msg">' . $msg . '</h3>';
+        unset($_SESSION['edit-user-msg']);
+    }
+    ?>
+
+    <?php
     $loggedInUser = unserialize($_SESSION['loggedUser']);
     if(isset($_GET['userIndex']))
     {

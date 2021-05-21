@@ -2,6 +2,12 @@ body {
   margin-inline: 0;
 }
 
+.msg {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
 .recipe {
   border: 0.1rem solid black;
   border-radius: 15px;

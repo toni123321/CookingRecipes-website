@@ -18,7 +18,7 @@
     <?php
         if(isset($_SESSION['msg-delete-recipe']))
         {
-            echo '<h2 class="delete-recipe-msg">'. $_SESSION['msg-delete-recipe'] .'</h2>';
+            echo '<h2 class="msg">'. $_SESSION['msg-delete-recipe'] .'</h2>';
             unset($_SESSION['msg-delete-recipe']);
         }
     ?>
