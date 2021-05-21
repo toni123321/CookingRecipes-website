@@ -156,7 +156,7 @@ class UserDbControl{
 
             $stmt = $this->conn->prepare($sql);
 
-            $stmt->execute([$user->GetFName(), $user->GetLName(), $user->GetEmail(), $user->GetPassword(), $user->GetIsAdmin(), $user->GetId()]);
+            $stmt->execute([$user->GetFName(), $user->GetLName(), $user->GetEmail(), $user->GetPassword(), (int)$user->GetIsAdmin(), $user->GetId()]);
 
             $this->conn = null;
 

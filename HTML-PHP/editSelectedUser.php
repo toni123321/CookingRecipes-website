@@ -26,9 +26,9 @@ if(isset($_SESSION['loggedUser'])) {?>
         $userControl = new UserControl();
         $userDbControl->GetUsers($userControl);
         $users = $userControl->GetAllUsers();
-
-        $userIndex = (int) $_GET['userIndex'];
+        $userIndex = (int)$_GET['userIndex'];
         $indexToRemove  = -1;
+
         for ($i=0;$i<count($users);$i++)
         {
             if($users[$i]->GetId() == $loggedInUser->GetId())
@@ -47,7 +47,15 @@ if(isset($_SESSION['loggedUser'])) {?>
         <input type="text" class="editAccTextField" class="editAccForm" id="lName" name="lName" value="<?php echo $selectedUser->GetLName()?>"<br><br>
         <label for="email" class="editAccLabel">Email:</label><br>
         <input type="text" class="editAccTextField" class="editAccForm"  id="email" name="email" value="<?php echo $selectedUser->GetEmail()?>"<br><br>
-        <input type="checkbox" id="cbIsAdmin" name="isAdmin" value="checked">
+    <?php
+        if($selectedUser->GetIsAdmin()) {
+            echo '<input type="checkbox" id="cbIsAdmin" name="isAdmin" value="checked" checked="checked">';
+        }
+        else{
+            echo '<input type="checkbox" id="cbIsAdmin" name="isAdmin" value="checked">';
+        }
+        ?>
+
         <label for="isAdmin" class="adminCB">The user is admin</label><br>
         <button class="saveChangesButton" type="submit"><i class="far fa-save"></i> Save changes</button>
     </form>

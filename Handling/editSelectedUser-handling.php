@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     if(isset($_POST["isAdmin"])){
-        $isAdmin = (bool) $_POST["isAdmin"];
+        $isAdmin = true;
     }
     else{
         $isAdmin = false;
@@ -50,18 +50,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $indexToRemove = $i;
         }
     }
-    unset($users[$indexToRemove]);
 
+    array_splice( $users, $indexToRemove, 1);
     $indexEditedUser  = -1;
     for ($x=0;$x<count($users);$x++)
     {
-        if($users[$x] != null){
-
-            if($users[$x]->GetId() == $userToEdit->GetId())
+        if($users[$x]->GetId() == $userToEdit->GetId())
             {
                 $indexEditedUser = $x;
             }
-        }
     }
 
     header('Location:../HTML-PHP/editSelectedUser.php?userIndex=' . $indexEditedUser);
