@@ -33,7 +33,7 @@ body {
 
 
 
-.moreRecipesButton, .saveChangesButton {
+.moreRecipesButton, .saveChangesButton, .deleteAccount {
   display: block;
   margin-left:auto;
   margin-right:auto;
@@ -45,8 +45,19 @@ body {
   color: #000000;
   margin-bottom: 1%;
 }
-.moreRecipesButton:hover, .saveChangesButton:hover {
+.moreRecipesButton:hover, .saveChangesButton:hover{
   background-color: #00e9ff;
+}
+
+.deleteAccount{
+  background-color: #c20505;
+  border: #c20505;
+  font-size: 1rem;
+}
+
+.deleteAccount:hover{
+  background-color: red;
+  border: red;
 }
 
 
