@@ -35,8 +35,8 @@ if(isset($_SESSION['loggedUser'])) {?>
             <label for="currPassword" class="editAccLabel">Current password:</label><br>
             <input type="text" class="editAccTextField" class="editAccForm"  id="currPassword" name="currPassword"?><br><br>
             <button class="saveChangesButton" type="submit"><i class="far fa-save"></i> Save changes</button>
-            <button class="deleteAccount"><i class="fas fa-user-times"></i> Delete account</button>
         </form>
+        <button onclick="location.href = '../Handling/removeUserAccountByUser.php'" class="deleteAccount"><i class="fas fa-user-times"></i> Delete account</button>
         </body>
         </html>
 <?php

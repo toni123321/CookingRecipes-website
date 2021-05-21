@@ -17,8 +17,13 @@ function FindUser($id, UserControl $control){
 session_start();
 $currUser = unserialize($_SESSION['loggedUser']);
 $dbControl->RemoveUser($currUser->GetId());
-
 $control = new UserControl();
 $dbControl->GetUsers($control);
 $allUser[] =  $control->GetAllUsers();
+
+if(in_array($currUser, $allUser) == false)
+{
+    unset($_SESSION['loggedUser']);
+    header('Location:../HTML-PHP/homepage.php');
+}
 ?>
