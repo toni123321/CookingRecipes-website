@@ -15,7 +15,13 @@
     <script src="../JavaScript/removeSearchBar.js"></script>
     <?php include '../DataLayer/RecipeDbControl.php'; ?>
 
-
+    <?php
+        if(isset($_SESSION['msg-delete-recipe']))
+        {
+            echo '<h2 class="delete-recipe-msg">'. $_SESSION['msg-delete-recipe'] .'</h2>';
+            unset($_SESSION['msg-delete-recipe']);
+        }
+    ?>
 
     <div class="grid" id="test">
     <?php

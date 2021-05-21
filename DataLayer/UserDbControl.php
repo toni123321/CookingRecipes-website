@@ -62,8 +62,9 @@ class UserDbControl{
                 $lname = $row['LastName'];
                 $email = $row['Email'];
                 $password = $row['Password'];
+                $isAdmin = $row['isAdmin'];
 
-                $control->AddUser($id, $fname, $lname, $email, $password);
+                $control->AddUser($id, $fname, $lname, $email, $password, $isAdmin);
 
             }
             // Close DB connection

@@ -6,9 +6,9 @@
 class UserControl{
     private $users = array();
 
-    public function AddUser($id, $fname, $lname, $email, $password){
+    public function AddUser($id, $fname, $lname, $email, $password, $isAdmin){
 
-        $user = new User($id, $fname, $lname, $email, $password);
+        $user = new User($id, $fname, $lname, $email, $password, $isAdmin);
         $this->users[] = $user;
     }
 
@@ -30,8 +30,8 @@ class UserControl{
 
     public function GetUser($id){
         foreach($this->users as $user) {
-            if($user->id == $id){
-                return "$user";
+            if($user->GetId() == $id){
+                return $user;
             }
         }
         return null;

@@ -14,13 +14,13 @@ class User{
     private $userFavRecipes = array();
 
     //constructor
-    public function __construct($id, $fname, $lname, $email, $password){
+    public function __construct($id, $fname, $lname, $email, $password, $isAdmin){
         $this->id = $id;
         $this->fname = $fname;
         $this->lname = $lname;
         $this->email = $email;
         $this->password = $password;
-        $this->isAdmin = false;
+        $this->isAdmin = $isAdmin;
     }
 
     //setters
@@ -79,7 +79,7 @@ class User{
     {
         $this->userFavRecipes[] = $recipe;
     }
-    public function GetFavRecipes()
+    public function GetFavRecipes(): array
     {
         return $this->userFavRecipes;
     }

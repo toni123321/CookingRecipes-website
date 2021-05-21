@@ -25,16 +25,19 @@
 //        $dbControl->GetRecipeIngredients($control);
         $currRecipe = $control->GetRecipe($recipeId);
         $ingredients = $currRecipe->GetAllIngredients();
-
+    ?>
+    <div class="adminControls">
+         <button class="editButton"><i class="far fa-edit"></i></button>
+         <button class="deleteButton"><i class="fas fa-trash"></i></button>
+    </div>
+    <?php
     echo '
-         <div class="adminControls">
-             <button class="editButton"><i class="far fa-edit"></i></button>
-             <button action="../Handling/removeOpenedRecipe.php"  class="deleteButton"><i class="fas fa-trash"></i></button>
-        </div>
+        
         <div class="currRecipe">
             <div class="upper">
-                <div class="recipeInfo" id="title">' . $currRecipe->GetTitle() . '</div>
+                <div class="recipeInfo" id="title">' . $currRecipe->GetTitle() . '</div>                
                 <button class="saveRecipeToFavList"><i class="fa fa-heart-o"></i></button>
+                
             </div>
             <div class="middle">';?>
                 <img id="recipeImg" src="<?php echo $currRecipe->GetImage(); ?>" alt="">
@@ -97,7 +100,7 @@
             $recipeDBControl = new RecipeDbControl();
             $userDBControl->GetUsers($userControl);
             $recipeDBControl->GetRecipes($recipeControl);
-            $recipeDBControl->GetRecipeIngredients($recipeControl);
+            //$recipeDBControl->GetRecipeIngredients($recipeControl);
 
 
             $userDBControl->GetUserFavRecipes($recipeControl, $user);
@@ -116,13 +119,10 @@
     <script type="text/javascript">
 
         var recipeId = <?php echo json_encode($recipeId); ?>;
-
         var userId = <?php echo json_encode($userId); ?>;
-
         var isRecipeSavedToFavList = <?php echo json_encode($isRecipeSavedToFavList); ?>;
     </script>
-    <script src="../JavaScript/saveRecipeToFavList.js">
-
-    </script>
+    <script src="../JavaScript/saveRecipeToFavList.js"></script>
+    <script src="../JavaScript/removeRecipe.js"></script>
 </body>
 </html>
