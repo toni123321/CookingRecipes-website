@@ -49,7 +49,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //todo
     }
 
-    $dbControl->UpdateUser($currUser->GetID(),$fname, $lname, $email, $password);
+    $user = new User($currUser->GetID(), $fname, $lname, $email, $password, $currUser->GetIsAdmin());
+
+    $dbControl->UpdateUser($user);
+
 
     $dbControl->GetUsers($control);
 

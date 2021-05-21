@@ -1,5 +1,5 @@
 
-<!-- Control class -->
+
 <?php include '../Models/User.php'; ?>
 
 <?php

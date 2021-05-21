@@ -1,5 +1,4 @@
 
-<!-- UserControl class -->
 <?php include '../LogicLayer/UserControl.php'; ?>
 
 <?php
@@ -147,16 +146,17 @@ class UserDbControl{
         }
     }
 
-    public function UpdateUser($id, $fname, $lname, $email, $password){
+    public function UpdateUser($user){
         try {
 
             $this->conn = new PDO("mysql:host=$this->host;dbname=$this->dbName", $this->username,  $this->password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            $sql = "UPDATE user SET FirstName= ?, LastName = ?, Email = ?, Password = ? WHERE ID = ?";
+            $sql = "UPDATE user SET FirstName= ?, LastName = ?, Email = ?, Password = ?, isAdmin = ? WHERE ID = ?";
 
             $stmt = $this->conn->prepare($sql);
-            $stmt->execute([$fname, $lname, $email, $password, $id]);
+
+            $stmt->execute([$user->GetFName(), $user->GetLName(), $user->GetEmail(), $user->GetPassword(), $user->GetIsAdmin(), $user->GetId()]);
 
             $this->conn = null;
 
@@ -167,7 +167,6 @@ class UserDbControl{
 
     public function RemoveUser($id){
         try {
-
             $this->conn = new PDO("mysql:host=$this->host;dbname=$this->dbName", $this->username,  $this->password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
