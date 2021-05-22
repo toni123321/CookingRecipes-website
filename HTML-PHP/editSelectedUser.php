@@ -2,7 +2,8 @@
     <link rel="stylesheet" href="../CSS/editAccountDetails.css">
 <?php
 session_start();
-if(isset($_SESSION['loggedUser'])) {?>
+if(isset($_SESSION['loggedUser'])) {
+    ?>
     <?php include '../DataLayer/UserDbControl.php';?>
     <html lang="en">
     <head>
@@ -45,7 +46,8 @@ if(isset($_SESSION['loggedUser'])) {?>
                 $indexToRemove = $i;
             }
         }
-        unset($users[$indexToRemove]);
+        //unset($users[$indexToRemove]);
+        array_splice( $users, $indexToRemove, 1);
         $selectedUser = $users[$userIndex];
     }
     ?>
@@ -68,8 +70,10 @@ if(isset($_SESSION['loggedUser'])) {?>
         <label for="isAdmin" class="adminCB">The user is admin</label><br>
         <button class="saveChangesButton" type="submit"><i class="far fa-save"></i> Save changes</button>
     </form>
+
     </body>
     </html>
+
     <?php
 }
 else{

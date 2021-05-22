@@ -4,9 +4,6 @@ if(isset($_POST['title']) && isset($_POST['calories']) && isset($_POST['cuisine'
     && isset($_POST['difficulty']) && isset($_POST['servings']) && isset($_POST['ingredients'])
     && isset($_POST['instructions']))
 {
-
-
-
     $title = (string) $_POST['title'];
     $calories = (string) $_POST['calories'];
     $cuisine = (string) $_POST['cuisine'];
