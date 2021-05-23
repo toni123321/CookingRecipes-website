@@ -16,7 +16,7 @@
 
 
 $(function(){
-    $("input[name=title]")[0].oninput = function () {
+    $("input[name=title]")[0].onchange = function () {
         if($(this).val().length < 5) {
             this.setCustomValidity("Please enter at least 5 characters.");
         }
