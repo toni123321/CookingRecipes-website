@@ -6,6 +6,7 @@
     <title>LoginForm</title>
     <?php include '../HTML-PHP/stylesheetScripts.php';?>
     <link rel="stylesheet" href="../CSS/register-styles.css">
+    <script src="../Libraries/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <button class="goToHomePage" onclick="location.href='../HTML-PHP/homepage.php'" type="button">Go to home page</button>
@@ -36,5 +37,6 @@
             </fieldset>
         </form>
     </div>
+    <script src="../JavaScript/inputHandleLoginRegister.js"></script>
 </body>
 </html>

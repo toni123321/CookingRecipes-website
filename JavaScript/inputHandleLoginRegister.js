@@ -1,4 +1,28 @@
 $(function(){
+    $("input[name=firstname]")[0].onchange = function () {
+        let regex = /^[A-Z]{1}[a-z]+([ -][A-Z]{1}[a-z]+){0,}$/;
+        let fname = $(this).val();
+
+        if(!regex.test(fname)) {
+            this.setCustomValidity("First name is not in the correct format!");
+        }
+        else{
+            this.setCustomValidity("");
+        }
+    };
+
+    $("input[name=lastname]")[0].onchange = function () {
+        let regex = /^[A-Z]{1}[a-z]+([ -][A-Z]{1}[a-z]+){0,}$/;
+        let lname = $(this).val();
+
+        if(!regex.test(lname)) {
+            this.setCustomValidity("Last name is not in the correct format!");
+        }
+        else{
+            this.setCustomValidity("");
+        }
+    };
+
     $("input[name=email]")[0].onchange = function () {
          let regex = /^[A-Za-z0-9]+[^A-Za-z0-9@]?[A-Za-z0-9]*@[A-z-]+[.][a-z]+$/;
          let email = $(this).val();
