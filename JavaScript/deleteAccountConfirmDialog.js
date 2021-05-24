@@ -1,17 +1,18 @@
-$( function() {
-    $( ".deleteAccount" ).dialog({
-        resizable: false,
-        height: "auto",
-        width: 400,
-        modal: true,
-        buttons:
-            {
-            "Confirm account deletion": function() {
-                $( this ).dialog( "../Handling/removeUserAccountByUser.php" );
+$(function() {
+    $("#dialog-delete-account").dialog({
+        autoOpen: false,
+        buttons: {
+            Yes: function() {
+                $(this).dialog("close");
+                location.href = '../Handling/removeUserAccountByUser.php';
+
             },
-            Cancel: function() {
-                $( this ).dialog( "close" );
+            No: function (){
+                $(this).dialog("close");
             }
-        }
+        },
     });
-} );
+    $("#deleteAccount").click(function() {
+        $("#dialog-delete-account").dialog("open");
+    });
+});

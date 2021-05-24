@@ -3,10 +3,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LoginForm</title>
+    <title>Login Form</title>
     <?php include '../HTML-PHP/stylesheetScripts.php';?>
     <link rel="stylesheet" href="../CSS/login-styles.css">
-    <script src="../Libraries/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <button class="goToHomePage" onclick="location.href='../HTML-PHP/homepage.php'" type="button">Go to home page</button>

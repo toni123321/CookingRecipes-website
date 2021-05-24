@@ -8,14 +8,10 @@
     <?php include '../HTML-PHP/stylesheetScripts.php';?>
     <link rel="stylesheet" href="../CSS/currentRecipe-styles.css">
 
-    <link href="../Libraries/jquery-3.6.0.min.js">
 </head>
 <body>
     <?php include '../HTML-PHP/main.php'; ?>
-    <script src="../Libraries/jquery-3.6.0.min.js"></script>
     <script src="../JavaScript/removeSearchBar.js"></script>
-    <?php include '../DataLayer/RecipeDbControl.php'; ?>
-
 
     <?php
         $recipeId = (int)$_GET['recipeId'];
@@ -30,7 +26,6 @@
     $userId = null;
     $user = null;
     $isRecipeSavedToFavList = false;
-    include '../Handling/login-handling.php';
     if(isset($_SESSION['loggedUser'])) {
         $user = unserialize($_SESSION['loggedUser']);
         $userId = $user->GetId();

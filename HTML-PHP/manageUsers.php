@@ -11,10 +11,7 @@
 </head>
 <body>
     <?php include '../HTML-PHP/main.php';?>
-    <script src="../Libraries/jquery-3.6.0.min.js"></script>
     <script src="../JavaScript/removeSearchBar.js"></script>
-    <?php include '../DataLayer/UserDbControl.php';?>
-
 
     <?php
         if(isset($_SESSION['delete-user-msg']))
@@ -40,8 +37,8 @@
                         echo '
                             <li>'. $userString .
                                 '<span class="user-admin-controls">
-                                    <span class="edit">Here</span>
-                                    <span class="remove">&times;</span>
+                                    <span class="edit"><i class="fas fa-user-edit"></i></span>
+                                    <span class="remove"><i class="fas fa-times"></i></span>
                                 </span>
                             </li>
                         ';

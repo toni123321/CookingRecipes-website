@@ -9,12 +9,13 @@
 .users-list {
     list-style-type: none;
     padding-inline-start: 0!important;
+    border: 5px solid black;
 }
 
 .users-list li {
     border: 1px solid #ddd;
     margin-top: -1px; /* Prevent double borders */
-    background-color: #f6f6f6;
+    background-color: #57c8e7;
     padding: 12px;
     text-decoration: none;
     font-size: 18px;

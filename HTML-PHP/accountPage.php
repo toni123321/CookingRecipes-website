@@ -1,22 +1,17 @@
-<?php include '../HTML-PHP/stylesheetScripts.php';?>
-<link rel="stylesheet" href="../CSS/editAccountDetails.css">
 <?php
 session_start();
 if(isset($_SESSION['loggedUser'])) {?>
-    <?php include '../LogicLayer/UserControl.php';?>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Recipe website</title>
-        <link rel="stylesheet" href="../CSS/main-styles.css">
-        <!-- for the icons (searchBar) -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Account</title>
+        <?php include '../HTML-PHP/stylesheetScripts.php';?>
+        <link rel="stylesheet" href="../CSS/editAccountDetails.css">
     </head>
     <body>
         <?php include '../HTML-PHP/main.php';?>
-        <script src="../Libraries/jquery-3.6.0.min.js"></script>
         <script src="../JavaScript/removeSearchBar.js"></script>
         <?php
             $loggedInUser = unserialize($_SESSION['loggedUser']);
@@ -36,7 +31,12 @@ if(isset($_SESSION['loggedUser'])) {?>
             <input type="text" class="editAccTextField" class="editAccForm"  id="currPassword" name="currPassword"?><br><br>
             <button class="saveChangesButton" type="submit"><i class="far fa-save"></i> Save changes</button>
         </form>
-        <button onclick="location.href = '../Handling/removeUserAccountByUser.php'" class="deleteAccount"><i class="fas fa-user-times"></i> Delete account</button>
+<!--        <button onclick="location.href = '../Handling/removeUserAccountByUser.php'" class="deleteAccount"><i class="fas fa-user-times"></i> Delete account</button>-->
+        <div id = "dialog-delete-account" >
+            Do you really want to delete this user?
+        </div>
+        <button class="deleteAccount" id="deleteAccount"><i class="fas fa-user-times"></i> Delete account</button>
+        <script src="../JavaScript/deleteAccountConfirmDialog.js"></script>
     </body>
     </html>
 <?php

@@ -1,5 +1,9 @@
 
 <?php
+include '../DataLayer/UserDbControl.php';
+include '../DataLayer/RecipeDbControl.php';
+
+
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
@@ -13,7 +17,14 @@ if (session_status() === PHP_SESSION_NONE) {
                 <a href="../HTML-PHP/homepage.php">Home</a>
                 <a href="../HTML-PHP/recipesPage.php">Recipes</a>
                 <a href="../HTML-PHP/aboutPage.php">About</a>
-                <a href="../HTML-PHP/manageUsers.php">Users</a>
+                <?php
+                if(isset($_SESSION['loggedUser'])) {
+                    $loggedUser = unserialize($_SESSION['loggedUser']);
+                    if($loggedUser->GetIsAdmin()) {
+                        echo '<a href="../HTML-PHP/manageUsers.php">Users</a>';
+                    }
+                }
+                ?>
                 <?php
                     if (isset($_SESSION['loggedUser'])) {
                         echo '<a href="../HTML-PHP/accountPage.php"><i class="fa fa-fw fa-user"></i></a>';
@@ -29,7 +40,16 @@ if (session_status() === PHP_SESSION_NONE) {
             <li><a href="../HTML-PHP/homepage.php">Home</a></li>
             <li><a href="../HTML-PHP/recipesPage.php">Recipes</a></li>
             <li><a href="../HTML-PHP/aboutPage.php">About</a></li>
-            <li><a href="../HTML-PHP/manageUsers.php">Users</a></li>
+
+            <?php
+            if(isset($_SESSION['loggedUser'])) {
+                $loggedUser = unserialize($_SESSION['loggedUser']);
+                if($loggedUser->GetIsAdmin()) {
+                    echo '<li><a href="../HTML-PHP/manageUsers.php">Users</a></li>';
+                }
+            }
+            ?>
+
             <?php
                 if (isset($_SESSION['loggedUser'])) {
                     echo '<li><a href="../HTML-PHP/accountPage.php"><i class="fa fa-fw fa-user"></i></a></li>';

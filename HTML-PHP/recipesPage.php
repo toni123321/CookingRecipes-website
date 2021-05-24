@@ -3,14 +3,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipe website</title>
-    <!-- for the icons (searchBar) -->
+    <title>Recipes</title>
     <?php include '../HTML-PHP/stylesheetScripts.php';?>
-    <script src="../Libraries/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <?php include '../HTML-PHP/main.php';?>
-    <?php include '../DataLayer/RecipeDbControl.php'; ?>
 
     <div id="search">
         <input id="searchInput" type="text" placeholder="Search.." name="search">

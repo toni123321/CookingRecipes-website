@@ -6,9 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Create recipes</title>
     <?php include '../HTML-PHP/stylesheetScripts.php';?>
-    <?php include '../DataLayer/RecipeDbControl.php'?>
     <link rel="stylesheet" href="../CSS/createRecipe-styles.css">
-    <script src="../Libraries/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <?php include '../HTML-PHP/main.php';?>
@@ -20,7 +18,7 @@
     }
     ?>
     <?php
-    if((int)$_GET['recipeId'] > 0){
+    if(isset($_GET['recipeId'])){
         $recipeId = (int)$_GET['recipeId'];
 
         $recipeDBControl = new RecipeDbControl();
