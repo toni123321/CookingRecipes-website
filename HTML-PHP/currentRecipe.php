@@ -137,5 +137,7 @@
     </script>
     <script src="../JavaScript/saveRecipeToFavList.js"></script>
     <script src="../JavaScript/removeRecipe.js"></script>
+    <script src="../JavaScript/editRecipe.js"></script>
+
 </body>
 </html>
