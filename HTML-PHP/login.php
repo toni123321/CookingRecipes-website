@@ -60,6 +60,6 @@
             </div>
         </div>
     </div>
-    <script src="../JavaScript/inputHandleLoginRegister.js"></script>
+    <script src="../JavaScript/inputHandleLogin.js"></script>
 </body>
 </html>

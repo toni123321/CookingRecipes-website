@@ -17,6 +17,11 @@
             echo '<h2 class="msg">'. $_SESSION['msg-delete-recipe'] .'</h2>';
             unset($_SESSION['msg-delete-recipe']);
         }
+        else if(isset($_SESSION['delete-account-msg']))
+        {
+            echo '<h2 class="msg">'. $_SESSION['delete-account-msg'] .'</h2>';
+            unset($_SESSION['delete-account-msg']);
+        }
     ?>
 
     <div class="grid" id="test">

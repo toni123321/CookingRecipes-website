@@ -23,6 +23,8 @@ $allUser[] =  $control->GetAllUsers();
 
 if(in_array($currUser, $allUser) == false)
 {
+    $msg = "You have successfully deleted your account!";
+    $_SESSION['delete-account-msg'] = $msg;
     unset($_SESSION['loggedUser']);
     header('Location:../HTML-PHP/homepage.php');
 }

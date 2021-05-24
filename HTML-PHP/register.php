@@ -36,6 +36,6 @@
             </fieldset>
         </form>
     </div>
-    <script src="../JavaScript/inputHandleLoginRegister.js"></script>
+    <script src="../JavaScript/inputHandleRegister.js"></script>
 </body>
 </html>

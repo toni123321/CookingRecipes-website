@@ -12,7 +12,7 @@
         <div id="name"><h3>NAME</h3></div>
         <nav>
             <ul>
-                <li><a href="#account">SIGN UP/IN</a></li>
+                <li><a href="../HTML-PHP/login.php">Log in</a></li>
             </ul>
         </nav>
         <div class="dynamicText">
@@ -24,7 +24,7 @@
             <span>How about some Thai cuisine?</span>
             <span>How about some Indian cuisine?</span>
         </div>
-        <div class="landingButton"><a href="#">Discover recipes now</a></div>
+        <div class="landingButton"><a href="../HTML-PHP/recipesPage.php">Discover recipes now</a></div>
         <!-- <div id="label">label</div> -->
         <div id="backgroundPicture"></div>
     </header>

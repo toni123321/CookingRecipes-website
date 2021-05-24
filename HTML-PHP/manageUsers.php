@@ -35,11 +35,12 @@
                     if($currUser->GetId() != $user->GetId()){
                         $userString = "{$user->GetFName()} {$user->GetLName()} ({$user->GetEmail()})";
                         echo '
-                            <li>'. $userString .
-                                '<span class="user-admin-controls">
+                            <li>
+                                <div class="user-info">'. $userString .'</div>
+                                <div class="user-admin-controls">
                                     <span class="edit"><i class="fas fa-user-edit"></i></span>
                                     <span class="remove"><i class="fas fa-times"></i></span>
-                                </span>
+                                </div>
                             </li>
                         ';
                     }
