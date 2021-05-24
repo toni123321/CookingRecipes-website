@@ -8,11 +8,13 @@
 </head>
 <body>
     <?php include '../HTML-PHP/main.php';?>
+    <div class="create-recipe-btn">
+        <button onclick="location.href='../HTML-PHP/createRecipe.php'">>> Create new recipe</button>
+    </div>
 
     <div id="search">
         <input id="searchInput" type="text" placeholder="Search.." name="search">
         <button id="searchBtn" type="submit"><i class="fa fa-search"></i></button>
-
     </div>
     <div class="grid">
         <?php

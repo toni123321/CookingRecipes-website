@@ -66,6 +66,19 @@ body {
   border: red;
 }
 
+.create-recipe-btn {
+  margin-top: 10px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.create-recipe-btn > button {
+  background-color: rgb(115, 192, 200);
+  border-radius: 3rem;
+  border: none;
+  padding: 10px;
+}
 
 @media screen and (min-width: 881px) {
 
