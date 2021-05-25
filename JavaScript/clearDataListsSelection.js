@@ -2,10 +2,10 @@ $('#difficulty').click(function (){
     $(this).val("");
 });
 
-$('.duration-units').click(function (){
+$('input[name=duration-units]').click(function (){
     $(this).val("");
 });
 
-$('#cuisine').click(function (){
+$('input[name=cuisine]').click(function (){
     $(this).val("");
 });

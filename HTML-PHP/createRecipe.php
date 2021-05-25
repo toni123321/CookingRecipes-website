@@ -123,7 +123,6 @@
         <input type="text" placeholder="Enter number of servings" name="servings" required>
         <label for="ingredients"><b>Ingredients</b></label>
         <textarea name="ingredients" id="" cols="30" rows="10" required></textarea>
-
         <label for="instructions"><b>Instructions</b></label>
         <textarea name="instructions" id="" cols="30" rows="10" required></textarea>
         <button id="createRecipeBtn" type="submit">Create new recipe</button>
@@ -132,6 +131,7 @@
     <?php
     }
     ?>
+    <script src="../JavaScript/clearDataListsSelection.js"></script>
     <script src="../JavaScript/inputHandleCreateRecipe.js"></script>
 </body>
 </html>
