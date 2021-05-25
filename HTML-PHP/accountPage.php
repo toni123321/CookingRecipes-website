@@ -36,7 +36,9 @@ if(isset($_SESSION['loggedUser'])) {?>
             Do you really want to delete this user?
         </div>
         <button class="deleteAccount" id="deleteAccount"><i class="fas fa-user-times"></i> Delete account</button>
+        <script src="jquery.ui.position.js"></script>
         <script src="../JavaScript/deleteAccountConfirmDialog.js"></script>
+
     </body>
     </html>
 <?php

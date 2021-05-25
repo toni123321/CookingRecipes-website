@@ -1,4 +1,5 @@
-$(function() {
+
+$(function(){
     $("#dialog-delete-account").dialog({
         autoOpen: false,
         buttons: {

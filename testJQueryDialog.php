@@ -12,6 +12,7 @@
     <title>JQuery Dialog</title>
 </head>
 <body>
+
 <div id = "dialog-delete" >
     Do you really want to delete this user?
 </div>
