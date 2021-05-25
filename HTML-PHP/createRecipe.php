@@ -50,15 +50,21 @@
         </datalist>
         <label for="duration"><b>Duration</b></label>
         <div class="duration">
-            <input type="text" placeholder="Enter duration" name="duration" required value="<?php echo $recipeToEdit->GetDuration()?>">
-            <input list="duration-units" placeholder="units.." name="duration-units" required>
+            <input type="text" placeholder="Enter duration" name="duration" required value="<?php
+            $duration = explode(" ", $recipeToEdit->GetDuration())[0];
+            echo $duration;
+            ?>">
+            <input list="duration-units" placeholder="units.." name="duration-units" required value="<?php
+            $durationType = explode(" ", $recipeToEdit->GetDuration())[1];
+            echo $durationType;
+            ?>">
             <datalist id="duration-units">
                 <option value="min">
                 <option value="hours">
             </datalist>
         </div>
         <label for="difficulty"><b>Difficulty</b></label>
-        <input list="difficulty" placeholder="Choose difficulty" name="difficulty" required>
+        <input list="difficulty" placeholder="Choose difficulty" name="difficulty" required value="<?php echo $recipeToEdit->GetDifficulty()?>">
         <datalist id="difficulty">
             <option value="EASY">
             <option value="MEDIUM">
@@ -75,7 +81,7 @@
             }?></textarea>
         <label for="instructions"><b>Instructions</b></label>
         <textarea name="instructions" id="" cols="30" rows="10" required><?php echo $recipeToEdit->GetInstructions()?></textarea>
-        <button id="createRecipeBtn" type="submit">Create new recipe</button>
+        <button id="createRecipeBtn" type="submit">Save changes</button>
     </form>
     <?php
     }
