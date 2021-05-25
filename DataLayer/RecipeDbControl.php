@@ -33,6 +33,28 @@ class RecipeDbControl{
 
     }
 
+    public function UpdateRecipe($image, $title, $calories, $cuisine, $duration, $difficulty, $servings, $ingredients, $instructions, $recipeID){
+        try {
+
+            $this->conn = new PDO("mysql:host=$this->host;dbname=$this->dbName", $this->username,  $this->password);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $sql = "UPDATE recipe SET Image = ?, Title = ?, Calories = ?, Cuisine = ?, Duration = ?, Difficulty = ?, Servings = ?, Ingredients = ?, Instructions = ? ".
+                    "WHERE ID = ?";
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([$image, $title, $calories, $cuisine, $duration, $difficulty, $servings, $ingredients , $instructions, $recipeID]);
+
+            // Close DB connection
+            $this->conn = null;
+            return "Successfully updated recipe!";
+
+        } catch(PDOException $e) {
+            echo $e->getMessage();
+        }
+
+    }
+
     public function GetRecipes(RecipeControl $control){
         try {
 

@@ -16,6 +16,11 @@
         echo '<h2 class="msg">'. $_SESSION['msg-create-recipe'] .'</h2>';
         unset($_SESSION['msg-create-recipe']);
     }
+    else if(isset($_SESSION['msg-edit-recipe']))
+    {
+        echo '<h2 class="msg">'. $_SESSION['msg-edit-recipe'] .'</h2>';
+        unset($_SESSION['msg-edit-recipe']);
+    }
     ?>
     <?php
     if(isset($_GET['recipeId'])){
@@ -26,8 +31,11 @@
         $recipeDBControl->GetRecipes($recipeControl);
 
         $recipeToEdit = $recipeControl->GetRecipe($recipeId);
+
+        $_SESSION['edit-recipe'] = serialize($recipeToEdit);
     ?>
-    <form id="createRecipe" action="../Handling/createRecipe-handling.php" method="post" enctype="multipart/form-data">
+    <form id="createRecipe" action="../Handling/editRecipe-handling.php" method="post" enctype="multipart/form-data">
+        <img id="recipeImg" src="<?php echo $recipeToEdit->GetImage(); ?>" alt="" height="300" width="300">
         <label for="title"><b>Select image to upload</b></label>
         <input type="file" name="fileToUpload" id="fileToUpload" required>
         <label for="title"><b>Title</b></label>
@@ -38,7 +46,6 @@
         <input list="cuisine" placeholder="Choose cuisine" name="cuisine" required value="<?php echo $recipeToEdit->GetCuisine()?>">
         <datalist id="cuisine">
             <option value="ITALIAN">
-            <option value="CHINESE">
             <option value="JAPANESE">
             <option value="MEXICAN">
             <option value="CHINESE">
@@ -98,7 +105,6 @@
         <input list="cuisine" placeholder="Choose cuisine" name="cuisine" required>
         <datalist id="cuisine">
             <option value="ITALIAN">
-            <option value="CHINESE">
             <option value="JAPANESE">
             <option value="MEXICAN">
             <option value="CHINESE">

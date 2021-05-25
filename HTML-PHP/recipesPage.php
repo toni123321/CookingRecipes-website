@@ -9,7 +9,7 @@
 <body>
     <?php include '../HTML-PHP/main.php';?>
     <div class="create-recipe-btn">
-        <button onclick="location.href='../HTML-PHP/createRecipe.php'">>> Create new recipe</button>
+        <button onclick="location.href='recipe-CreateEdit.php'">>> Create new recipe</button>
     </div>
 
     <div id="search">

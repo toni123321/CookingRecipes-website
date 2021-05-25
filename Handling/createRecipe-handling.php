@@ -47,7 +47,7 @@ if(isset($_POST['title']) && isset($_POST['calories']) && isset($_POST['cuisine'
             $msg = $recipeDbControl->InsertRecipe($destination, $title, $calories, $cuisine, $duration, $difficulty, $servings, $ingredients, $instructions);
             session_start();
             $_SESSION['msg-create-recipe'] = $msg;
-            header('Location:../HTML-PHP/createRecipe.php');
+            header('Location:../HTML-PHP/recipe-CreateEdit.php');
             exit();
         }
     }

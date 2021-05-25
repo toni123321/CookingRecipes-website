@@ -1,3 +1,3 @@
 $('.editButton').on("click", function() {
-    location.href = '../HTML-PHP/createRecipe.php?userId=' + userId + '&recipeId=' + recipeId;
+    location.href = '../HTML-PHP/recipe-CreateEdit.php?userId=' + userId + '&recipeId=' + recipeId;
 });
