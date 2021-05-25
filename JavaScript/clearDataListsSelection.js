@@ -1,4 +1,4 @@
-$('#difficulty').click(function (){
+$('input[name=difficulty]').click(function (){
     $(this).val("");
 });
 

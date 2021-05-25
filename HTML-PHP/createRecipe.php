@@ -35,7 +35,7 @@
         <label for="calories"><b>Calories</b></label>
         <input type="text" placeholder="Enter calories" name="calories" required value="<?php echo $recipeToEdit->GetCalories()?>">
         <label for="cuisine"><b>Cuisine</b></label>
-        <input list="cuisine" placeholder="Choose cuisine" name="cuisine" required>
+        <input list="cuisine" placeholder="Choose cuisine" name="cuisine" required value="<?php echo $recipeToEdit->GetCuisine()?>">
         <datalist id="cuisine">
             <option value="ITALIAN">
             <option value="CHINESE">
