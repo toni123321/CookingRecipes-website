@@ -68,9 +68,13 @@
         <label for="servings"><b>Servings</b></label>
         <input type="text" placeholder="Enter number of servings" name="servings" required value="<?php echo $recipeToEdit->GetServings()?>">
         <label for="ingredients"><b>Ingredients</b></label>
-        <textarea name="ingredients" id="" cols="30" rows="10" required></textarea>
+        <textarea name="ingredients" id="" cols="30" rows="10" required><?php
+            foreach($recipeToEdit->GetAllIngredients() as $ingredient)
+            {
+                echo $ingredient;
+            }?></textarea>
         <label for="instructions"><b>Instructions</b></label>
-        <textarea name="instructions" id="" cols="30" rows="10" required><?php $recipeToEdit->GetInstructions() ?></textarea>
+        <textarea name="instructions" id="" cols="30" rows="10" required><?php echo $recipeToEdit->GetInstructions()?></textarea>
         <button id="createRecipeBtn" type="submit">Create new recipe</button>
     </form>
     <?php
