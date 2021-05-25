@@ -37,7 +37,7 @@
     <form id="createRecipe" action="../Handling/editRecipe-handling.php" method="post" enctype="multipart/form-data">
         <img id="recipeImg" src="<?php echo $recipeToEdit->GetImage(); ?>" alt="" height="300" width="300">
         <label for="title"><b>Select image to upload</b></label>
-        <input type="file" name="fileToUpload" id="fileToUpload" required>
+        <input type="file" name="fileToUpload" id="fileToUpload">
         <label for="title"><b>Title</b></label>
         <input id="title" type="text" placeholder="Enter title" name="title" required value="<?php echo $recipeToEdit->GetTitle()?>">
         <label for="calories"><b>Calories</b></label>
