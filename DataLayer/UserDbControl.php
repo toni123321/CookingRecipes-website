@@ -1,4 +1,4 @@
-
+<?php include_once('../DataLayer/DbControl.php');?>
 <?php include '../LogicLayer/UserControl.php'; ?>
 
 <?php

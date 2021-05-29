@@ -43,7 +43,7 @@ if(isset($_POST['title']) && isset($_POST['calories']) && isset($_POST['cuisine'
 // if everything is ok, try to upload file
     } else {
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $destination)) {
-            $recipeDbControl = new RecipeDbControl();
+            $recipeDbControl = new RecipeDbControl("studmysql01.fhict.local", "dbi454917", "dbi454917", "123");
             $msg = $recipeDbControl->InsertRecipe($destination, $title, $calories, $cuisine, $duration, $difficulty, $servings, $ingredients, $instructions);
             session_start();
             $_SESSION['msg-create-recipe'] = $msg;

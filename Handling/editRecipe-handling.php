@@ -5,7 +5,7 @@ if(isset($_POST['title']) && isset($_POST['calories']) && isset($_POST['cuisine'
     && isset($_POST['difficulty']) && isset($_POST['servings']) && isset($_POST['ingredients'])
     && isset($_POST['instructions']) && isset($_SESSION['edit-recipe']))
 {
-    $recipeDbControl = new RecipeDbControl();
+    $recipeDbControl = new RecipeDbControl("studmysql01.fhict.local", "dbi454917", "dbi454917", "123");
 
     $title = (string) $_POST['title'];
     $calories = (string) $_POST['calories'];

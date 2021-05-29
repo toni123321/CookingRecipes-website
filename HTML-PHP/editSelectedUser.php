@@ -28,7 +28,7 @@ if(isset($_SESSION['loggedUser'])) {
     $loggedInUser = unserialize($_SESSION['loggedUser']);
     if(isset($_GET['userIndex']))
     {
-        $userDbControl = new UserDbControl();
+        $userDbControl = new UserDbControl("studmysql01.fhict.local", "dbi454917", "dbi454917", "123");
         $userControl = new UserControl();
         $userDbControl->GetUsers($userControl);
         $users = $userControl->GetAllUsers();

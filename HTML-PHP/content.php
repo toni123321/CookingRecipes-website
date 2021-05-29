@@ -24,7 +24,7 @@
         $control = new RecipeControl();
         //$control->AddRecipe("Pancakes with chocolate", 250, CuisineType::AMERICAN, 0.30, DifficultyLevel::MEDIUM, "Some text 1!");
         //$control->AddRecipe("Risotto", 100, CuisineType::ITALIAN, 1.00, DifficultyLevel::MEDIUM, "Some text 2!");
-        $dbControl = new RecipeDbControl();
+        $dbControl = new RecipeDbControl("studmysql01.fhict.local", "dbi454917", "dbi454917", "123");
         $dbControl->GetRecipes($control);
 
         echo '<h2>Recipes</h2>';

@@ -16,7 +16,7 @@
     <?php
         $recipeId = (int)$_GET['recipeId'];
         $control = new RecipeControl();
-        $dbControl = new RecipeDbControl();
+        $dbControl = new RecipeDbControl("studmysql01.fhict.local", "dbi454917", "dbi454917", "123");
         $dbControl->GetRecipes($control);
 //        $dbControl->GetRecipeIngredients($control);
         $currRecipe = $control->GetRecipe($recipeId);
@@ -35,8 +35,8 @@
         $userControl = new UserControl();
         $recipeControl = new RecipeControl();
 
-        $userDBControl = new UserDbControl();
-        $recipeDBControl = new RecipeDbControl();
+        $userDBControl = new UserDbControl("studmysql01.fhict.local", "dbi454917", "dbi454917", "123");
+        $recipeDBControl = new RecipeDbControl("studmysql01.fhict.local", "dbi454917", "dbi454917", "123");
         $userDBControl->GetUsers($userControl);
         $recipeDBControl->GetRecipes($recipeControl);
         //$recipeDBControl->GetRecipeIngredients($recipeControl);

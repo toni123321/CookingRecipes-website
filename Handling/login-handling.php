@@ -14,7 +14,7 @@
         $control = new UserControl();
         //$control->AddUser("Nick", "Doe", new DateTime('01/11/2000'), "nick.doe00@gmail.com", "pass123");
         //$control->AddUser("John", "Newman", new DateTime('05/12/2005'), "johnxD@gmail.com", "pass321");
-        $dbControl = new UserDbControl();
+        $dbControl = new UserDbControl("studmysql01.fhict.local", "dbi454917", "dbi454917", "123");
         $dbControl->GetUsers($control);
 
         function test_input($data) {
