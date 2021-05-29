@@ -88,6 +88,49 @@ class RecipeDbControl extends DbControl {
         }
     }
 
+    public function GetRecipesOnScroll(RecipeControl $control, $limit, $offset){
+        try {
+
+            $this->conn = new PDO("mysql:host=$this->host;dbname=$this->dbName", $this->username,  $this->password);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $sql = "SELECT * FROM recipe LIMIT :limit OFFSET :offset";
+
+//           $result = $this->conn->query($sql);
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindValue(':limit', (int) $limit, PDO::PARAM_INT);
+            $stmt->bindValue(':offset', (int) $offset, PDO::PARAM_INT);
+            $stmt->execute();
+//            $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
+//            $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
+
+            //$stmt->execute([$limit, $offset]);
+            $result = $stmt->fetchAll();
+
+            foreach ($result as $row)
+            {
+                $id = $row['ID'];
+                $image = $row['Image'];
+                $title = $row['Title'];
+                $calories = $row['Calories'];
+                $cuisine = $row['Cuisine'];
+                $duration = $row['Duration'];
+                $difficulty = $row['Difficulty'];
+                $servings = $row['Servings'];
+                $ingredients = $row['Ingredients'];
+                $instructions = $row['Instructions'];
+                $control->AddRecipe($id, $image, $title, $calories, $cuisine, $duration, $difficulty, $servings, $ingredients, $instructions);
+            }
+
+            // Close DB connection
+            $this->conn = null;
+
+
+        } catch(PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
     public function RemoveRecipe($recipeId)
     {
         try {
