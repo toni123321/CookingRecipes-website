@@ -45,10 +45,6 @@
                             }
                             ?>
                         </div>
-                        <div class="form">
-                            <!--<button type="button" class="cancelbtn">Cancel</button>-->
-                            <span class="password">Forgot <a href="#">password?</a></span>
-                        </div>
                     </fieldset>
                 </form>
 
