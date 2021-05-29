@@ -9,13 +9,17 @@
 <body>
     <?php include '../HTML-PHP/main.php';?>
     <?php
+    $userDBControl = new UserDbControl("studmysql01.fhict.local", "dbi454917", "dbi454917", "123");
 
-    if() {
+    if(isset($_SESSION['loggedUser'])) {
+        $user = unserialize($_SESSION['loggedUser']);
+        if($user->GetAdmin()){
         ?>
-        <div class="create-recipe-btn" >
-            <button onclick = "location.href='recipe-CreateEdit.php'" >>> Create new recipe </button >
-        </div>
+            <div class="create-recipe-btn" >
+                <button onclick = "location.href='recipe-CreateEdit.php'" >>> Create new recipe </button >
+            </div>
         <?php
+        }
     }
     ?>
 
