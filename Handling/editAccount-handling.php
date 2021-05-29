@@ -41,12 +41,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //password check
     if($newPassword == $confNewPassword && $newPassword != $currPassword && $currPassword == $password){
         $password = $newPassword;
+
+        $msg = "You have successfully updated your password.";
+        $_SESSION['edit-pass-msg'] = $msg;
     }
     else if($newPassword == $password){
-        //todo
+        $msg = "The new password is the same as the currently set one.";
+        $_SESSION['edit-pass-msg'] = $msg;
     }
     else{
-        //todo
+        $msg = "In order to set a new password, please, make sure to enter the current one correctly.";
+        $_SESSION['edit-pass-msg'] = $msg;
     }
 
     $user = new User($currUser->GetID(), $fname, $lname, $email, $password, $currUser->GetIsAdmin());
