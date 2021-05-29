@@ -13,7 +13,7 @@
 
     if(isset($_SESSION['loggedUser'])) {
         $user = unserialize($_SESSION['loggedUser']);
-        if($user->GetAdmin()){
+        if($user->GetIsAdmin()){
         ?>
             <div class="create-recipe-btn" >
                 <button onclick = "location.href='recipe-CreateEdit.php'" >>> Create new recipe </button >

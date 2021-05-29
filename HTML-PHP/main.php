@@ -9,7 +9,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 ?>
 <header>
-    <div id="name"><h3>NAME</h3></div>
+    <div id="name"><h3>Recipebay</h3></div>
     <nav>
         <div class="dropdown">
             <button class="dropbtn">Menu</button>

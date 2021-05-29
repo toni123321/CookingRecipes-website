@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <div id="name"><h3>NAME</h3></div>
+        <div id="name"><h3>recipebay</h3></div>
         <nav>
             <ul>
                 <li><a href="../HTML-PHP/login.php">Log in</a></li>
