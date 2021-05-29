@@ -22,7 +22,7 @@
             $email = test_input($_POST["email"]);
             $password = test_input($_POST["password"]);
 
-            $dbControl = new UserDbControl();
+            $dbControl = new UserDbControl("studmysql01.fhict.local", "dbi454917", "dbi454917", "123");
             $dbControl->InsertUser($fname, $lname, $email, $password);
             echo
             '

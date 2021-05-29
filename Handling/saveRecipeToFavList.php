@@ -4,7 +4,7 @@
         $userId = (int)$_GET['userId'];
         $recipeId = (int)$_GET['recipeId'];
         $isRecipeSavedToFavList = (string)($_GET['isRecipeSavedToFavList']);
-        $dbControl = new UserDbControl();
+        $dbControl = new UserDbControl("studmysql01.fhict.local", "dbi454917", "dbi454917", "123");
         echo $isRecipeSavedToFavList;
         if($isRecipeSavedToFavList == 'false') {
             $dbControl->InsertRecipeToFavourites($userId, $recipeId);

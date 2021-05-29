@@ -2,19 +2,12 @@
 <?php include '../LogicLayer/UserControl.php'; ?>
 
 <?php
-class UserDbControl{
-    private $conn;
+class UserDbControl extends DbControl {
 
-    // Server=studmysql01.fhict.local;Uid=dbi454917;Database=dbi454917;Pwd=yourPassword;
-    private $host = "studmysql01.fhict.local";
-    private $dbName = "dbi454917";
-    private $username = "dbi454917";
-    private $password = "123";
-
-//    private $host = "localhost";
-//    private $dbName = "dbi454917";
-//    private $username = "root";
-//    private $password = "";
+    public function __construct($host, $dbName, $username, $password)
+    {
+        parent::__construct($host, $dbName, $username, $password);
+    }
 
     public function InsertUser($fname, $lname, $email, $password){
         try {

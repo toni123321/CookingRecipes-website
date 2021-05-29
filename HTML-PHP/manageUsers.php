@@ -24,7 +24,7 @@
     <div class="users-list-parent">
         <ul class="users-list">
             <?php
-                $dbUserControl = new UserDbControl();
+                $dbUserControl = new UserDbControl("studmysql01.fhict.local", "dbi454917", "dbi454917", "123");
                 $userControl = new UserControl();
                 $dbUserControl->GetUsers($userControl);
                 $users = $userControl->GetAllUsers();

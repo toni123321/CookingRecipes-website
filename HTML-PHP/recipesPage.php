@@ -8,9 +8,16 @@
 </head>
 <body>
     <?php include '../HTML-PHP/main.php';?>
-    <div class="create-recipe-btn">
-        <button onclick="location.href='recipe-CreateEdit.php'">>> Create new recipe</button>
-    </div>
+    <?php
+
+    if() {
+        ?>
+        <div class="create-recipe-btn" >
+            <button onclick = "location.href='recipe-CreateEdit.php'" >>> Create new recipe </button >
+        </div>
+        <?php
+    }
+    ?>
 
     <div id="search">
         <input id="searchInput" type="text" placeholder="Search.." name="search">
@@ -19,7 +26,7 @@
     <div class="grid">
         <?php
         $control = new RecipeControl();
-        $dbControl = new RecipeDbControl();
+        $dbControl = new RecipeDbControl("studmysql01.fhict.local", "dbi454917", "dbi454917", "123");
         $dbControl->GetRecipes($control);
 
         $allRecipes = $control->GetAllRecipes();

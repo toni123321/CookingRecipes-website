@@ -1,10 +1,10 @@
-<?php include '../DataLayer/RecipeDbControl.php'?>
+    <?php include '../DataLayer/RecipeDbControl.php'?>
 <?php
 if(isset($_GET['searchInput']))
 {
     $searchInput = (string) $_GET['searchInput'];
 
-    $recipesDbControl = new RecipeDbControl();
+    $recipesDbControl = new RecipeDbControl("studmysql01.fhict.local", "dbi454917", "dbi454917", "123");
     $recipeControl = new RecipeControl();
     $recipesDbControl->GetRecipes($recipeControl);
 

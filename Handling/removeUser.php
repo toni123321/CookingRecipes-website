@@ -1,6 +1,6 @@
 <?php include '../DataLayer/UserDbControl.php'; ?>
 <?php
-$userDbControl = new UserDbControl();
+$userDbControl = new UserDbControl("studmysql01.fhict.local", "dbi454917", "dbi454917", "123");
 $userControl = new UserControl();
 
 $userDbControl->GetUsers($userControl);

@@ -26,7 +26,7 @@
     if(isset($_GET['recipeId'])){
         $recipeId = (int)$_GET['recipeId'];
 
-        $recipeDBControl = new RecipeDbControl();
+        $recipeDBControl = new RecipeDbControl("studmysql01.fhict.local", "dbi454917", "dbi454917", "123");
         $recipeControl = new RecipeControl();
         $recipeDBControl->GetRecipes($recipeControl);
 

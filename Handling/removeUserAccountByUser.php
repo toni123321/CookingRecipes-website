@@ -1,7 +1,7 @@
 <?php include '../DataLayer/UserDbControl.php'; ?>
 <?php
 $control = new UserControl();
-$dbControl = new UserDbControl();
+$dbControl = new UserDbControl("studmysql01.fhict.local", "dbi454917", "dbi454917", "123");
 $dbControl->GetUsers($control);
 
 function FindUser($id, UserControl $control){

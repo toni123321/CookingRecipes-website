@@ -9,11 +9,11 @@ if(isset($_GET['userId']) && isset($_GET['recipeId'])) {
     echo $recipeId;
 
     $userControl = new UserControl();
-    $userDBControl = new UserDbControl();
+    $userDBControl = new UserDbControl("studmysql01.fhict.local", "dbi454917", "dbi454917", "123");
 
     $userDBControl->GetUsers($userControl);
 
-    $recipeDBControl = new RecipeDbControl();
+    $recipeDBControl = new RecipeDbControl("studmysql01.fhict.local", "dbi454917", "dbi454917", "123");
     $recipeControl  = new RecipeControl();
     $recipeDBControl->GetRecipes($recipeControl);
 
