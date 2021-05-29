@@ -107,7 +107,6 @@ body{
 
   .dynamicText {
     margin-top: 30vh;
-    padding-top: auto;
     font-family:Arial;
     color: rgba(0, 255, 153, 1);
     display: flex;

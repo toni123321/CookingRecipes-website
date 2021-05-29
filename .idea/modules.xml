@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../s2-prj-cb03-1-webiste/.idea/s2-prj-cb03-1-webiste.iml" filepath="$PROJECT_DIR$/../s2-prj-cb03-1-webiste/.idea/s2-prj-cb03-1-webiste.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/s2-wad.iml" filepath="$PROJECT_DIR$/.idea/s2-wad.iml" />
     </modules>
   </component>

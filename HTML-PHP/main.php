@@ -4,6 +4,7 @@ include '../DataLayer/UserDbControl.php';
 include '../DataLayer/RecipeDbControl.php';
 
 
+
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
