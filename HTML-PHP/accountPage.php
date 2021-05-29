@@ -11,8 +11,17 @@ if(isset($_SESSION['loggedUser'])) {?>
         <link rel="stylesheet" href="../CSS/editAccountDetails.css">
     </head>
     <body>
+
         <?php include '../HTML-PHP/main.php';?>
         <script src="../JavaScript/removeSearchBar.js"></script>
+        <?php
+        if(isset($_SESSION['edit-pass-msg']))
+        {
+            $msg = (string) $_SESSION['edit-pass-msg'];
+            echo '<h3 class="msg">' . $msg . '</h3>';
+            unset($_SESSION['edit-pass-msg']);
+        }
+        ?>
         <?php
             $loggedInUser = unserialize($_SESSION['loggedUser']);
         ?>
@@ -24,11 +33,11 @@ if(isset($_SESSION['loggedUser'])) {?>
             <label for="email" class="editAccLabel">Email:</label><br>
             <input type="text" class="editAccTextField" class="editAccForm"  id="email" name="email" value="<?php echo $loggedInUser->GetEmail()?>"<br><br>
             <label for="newPassword" class="editAccLabel">New password:</label><br>
-            <input type="text" class="editAccTextField" class="editAccForm"  id="newPassword" name="newPassword"?><br><br>
+            <input type="password" class="editAccTextField" class="editAccForm"  id="newPassword" name="newPassword"?><br><br>
             <label for="confNewPassword" class="editAccLabel">Confirm new password:</label><br>
-            <input type="text" class="editAccTextField" class="editAccForm"  id="confNewPassword" name="confNewPassword"?><br><br>
+            <input type="password" class="editAccTextField" class="editAccForm"  id="confNewPassword" name="confNewPassword"?><br><br>
             <label for="currPassword" class="editAccLabel">Current password:</label><br>
-            <input type="text" class="editAccTextField" class="editAccForm"  id="currPassword" name="currPassword"?><br><br>
+            <input type="password" class="editAccTextField" class="editAccForm"  id="currPassword" name="currPassword"?><br><br>
             <button class="saveChangesButton" type="submit"><i class="far fa-save"></i> Save changes</button>
         </form>
 <!--        <button onclick="location.href = '../Handling/removeUserAccountByUser.php'" class="deleteAccount"><i class="fas fa-user-times"></i> Delete account</button>-->
