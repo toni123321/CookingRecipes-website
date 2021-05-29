@@ -9,6 +9,8 @@
 </head>
 <body>
     <button class="goToHomePage" onclick="location.href='../HTML-PHP/homepage.php'" type="button">Go to home page</button>
+    <button class="goToLoginPage" onclick="location.href='../HTML-PHP/login.php'" type="button">Have an account? Log in</button>
+
     <div class="form-parent">
 
         <form action="../Handling/registration-handling.php" method="post">

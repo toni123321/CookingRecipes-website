@@ -13,7 +13,8 @@ form {
     margin-left: auto;
     margin-right: auto;
     margin-top: 2%;
-    background-color: lightblue;
+    padding: clamp(5px, 1.5%, 10px);
+    background-color: #00e9ff;
     border-radius:3rem;
     font-size: 1.2rem;
 }
