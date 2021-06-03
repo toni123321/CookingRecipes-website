@@ -32,9 +32,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $currUser = unserialize($_SESSION['loggedUser']);
 
     $dbControl = new UserDbControl("studmysql01.fhict.local", "dbi454917", "dbi454917", "123");
-    $password = $currUser->GetPassword();
 
     $userToEdit = FindUser($email, $control);
+    $password = $userToEdit->GetPassword();
 
     $user = new User($userToEdit->GetID(), $fname, $lname, $email, $password, $isAdmin);
 
