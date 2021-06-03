@@ -30,6 +30,10 @@
                 $users = $userControl->GetAllUsers();
                 $currUser = unserialize($_SESSION['loggedUser']);
 
+                if(count($users)  == 1){
+                    echo '<li>' . 'There are no users!' . '</li>';
+                }
+
                 foreach($users as $user)
                 {
                     if($currUser->GetId() != $user->GetId()){
