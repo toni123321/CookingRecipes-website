@@ -18,7 +18,7 @@
 $(function(){
 
     $("input[name=title]")[0].onchange = function () {
-        let regex = /^[A-Za-z0-9]{2,70}$/;
+        let regex = /^[A-Za-z0-9 ]{2,70}$/;
         let title = $(this).val();
 
         if(!regex.test(title)) {
